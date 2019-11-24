@@ -50,16 +50,12 @@ table {
 
 *
 {
-  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
 }
-ul
-{
-  list-style-type: none;
-  text-align: center;
-}
+
 //do usunnięcia jak będzie reset /\
+
 .carousel
 {
   display: flex;
@@ -76,20 +72,46 @@ ul
 {
   height: 200px;
   width: 100%;
-  background-color: rgba(0, 238, 196, 0.31);
-  border-bottom: 1px solid black;  //zmienić kolor na zmienną
+  background-color: rgba(98, 103, 97, 0.11); //test - do usuniecia
+  border-bottom: 1px solid black;  //zmienić kolor na zmienna
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  img
+  .slide-img
   {
-    height: 200px;
+    height: 100%;
+    width: 100%;
+    img
+    {
+      height: 200px;
+    }
+  }
+  .slide-text
+  {
+    width: 70%;
+  }
+
+  span
+  {
+    display: block;
+    padding-bottom: 20px;
   }
 }
 
-li
+ul
 {
+  list-style-type: none; // sprawdzenie z resetem
+  text-align: center;
   width: 100%;
-  height: 200px;
-  display: none;
+  li
+  {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    display: none;
+  }
 }
 
 .slide-buttons
