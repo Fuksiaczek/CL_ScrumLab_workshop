@@ -74,6 +74,7 @@ table {
   width: 100%;
   background-color: rgba(98, 103, 97, 0.11); //test - do usuniecia
   border-bottom: 1px solid black;  //zmienić kolor na zmienna
+  border-top: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,11 +82,14 @@ table {
 
   .slide-img
   {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
     img
     {
-      height: 200px;
+      height: 100%;
     }
   }
   .slide-text
@@ -102,6 +106,7 @@ table {
 
 ul
 {
+  display: flex;
   list-style-type: none; // sprawdzenie z resetem
   text-align: center;
   width: 100%;
