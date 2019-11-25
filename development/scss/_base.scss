@@ -5,13 +5,19 @@ body {
   background-position: center;
   width: 100%;
   font-size: 14px; // wielkość bazowa
+  font-family: $font-text;
+
 
 }
 
 
 .container {
   max-width: 1000px;
-
+  margin: 0 auto;
 
 }
 
+h3
+{
+  font-size: 1.3rem;
+}
