@@ -1,47 +1,42 @@
-.carousel
-{
+section:nth-of-type(1){
+  background-color: $color-background;
+}
+
+.carousel {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.visible
-{
+.visible {
   display: inline-block;
 }
 
-.slide
-{
-  height: 200px;
+.slide {
+  height: 400px;
   width: 100%;
   background-color: $color-background;
-  border-bottom: 1px solid $color-headText;
-  border-top: 1px solid $color-headText;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  .slide-img
-  {
+  .slide-img {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
-    img
-    {
+    img {
       height: 100%;
     }
   }
 
-  .slide-text
-  {
+  .slide-text {
     width: 70%;
 
-    span
-    {
+    span {
       font-size: 1.5rem;
       display: block;
       padding-bottom: 10px;
@@ -49,24 +44,22 @@
   }
 }
 
-ul
-{
-  display: flex;
-  text-align: center;
-  width: 100%;
-
-  li
-  {
-    width: 100%;
-    height: 200px;
+div {
+  ul {
+    display: flex;
     text-align: center;
-    display: none;
+    width: 100%;
+    li {
+      width: 100%;
+      height: 400px;
+      text-align: center;
+      display: none;
+    }
   }
 }
 
-.slide-buttons
-{
-  height: 200px;
+.slide-buttons {
+  height: 400px;
   width: 100%;
   position: absolute;
   display: flex;
