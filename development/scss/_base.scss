@@ -1,10 +1,10 @@
 body {
   background-image: url("/images/background-image.png");
   background-size: contain;
-  background-repeat: no-repeat;
   background-position: center;
   width: 100%;
   font-size: 14px; // wielkość bazowa
+  font-family: $font-text;
 
 }
 
