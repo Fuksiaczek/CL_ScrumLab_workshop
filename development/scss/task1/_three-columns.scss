@@ -1,5 +1,5 @@
 .three-column-main {
-  background-color: #5B605F;
+  background-color: $color-navigation;
   display: flex;
   justify-content: center;
 }
@@ -13,8 +13,8 @@
 }
 
 .three-columns-section {
-  font-family: 'Open Sans', sans-serif;
-  color: #FFFFFA;
+  font-family: $font-text;
+  color: $color-background;
   padding: 30px 50px;
   flex: 0 1 33.3%;
 
@@ -33,7 +33,7 @@
     &:link,
     &:visited,
     &:active {
-      color: #FFFFFA;
+      color: $color-background;
       text-decoration: none;
     }
 
@@ -59,8 +59,8 @@
   .button {
     padding: 5px 10px;
     font-weight: bold;
-    color: #FFFFFA;
-    background-color: #FF6600;
+    color: $color-background;
+    background-color: $color-headButton;
     position: absolute;
     cursor: pointer;
   }
