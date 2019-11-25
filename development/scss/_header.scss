@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Charmonman");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+h1 {
+  font-family: Charmonman;
+  padding-left: 4rem;
+  font-size: 2.5rem;
+  #first {
+    font-weight: 100;
+    color: white;
+  }
+  #second {
+    color: #e58a20;
+    font-weight: 700;
+  }
+}
+
+header {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #292f32;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    list-style: none;
+    text-transform: uppercase;
+    padding-right: 4rem;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    li:nth-child(1) > a {
+      color: #e58a20;
+    }
+    li {
+      margin-right: 4rem;
+      a {
+        text-decoration: none;
+        color: white;
+        &:hover {
+          color: #e58a20;
+        }
+      }
+    }
+  }
+}
