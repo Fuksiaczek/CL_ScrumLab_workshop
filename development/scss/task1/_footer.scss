@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+// powyższe do usunięcia, gdy pojawi się reset + zmienne
+
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: #4a4a49; // zmienna na kolor
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif; // zmienna na czcionkę
+
+  p {
+    font-size: 1rem;
+    color: #FFFFFA;
+
+    span {
+      color: #FF6600;
+    }
+  }
+}
