@@ -1,0 +1,42 @@
+.aside-menu
+{
+  width: 150px;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(40, 40, 40, 0.77); //zmienna
+
+  ul{
+    padding: 0;
+    width: 100%;
+
+    li
+    {
+      width: 100%;
+      list-style-type: none; //do usunięcia - reset
+      position: relative;
+    }
+  }
+}
+.aside-menu a
+{
+  display: block;
+  padding: 20px 0 20px 20px;
+  text-decoration: none; //reset
+
+
+}
+.aside-menu .arrow-icon
+{
+  position: absolute;
+  top: 35%;
+  left: 85%;
+  color: orange; //zmienna
+}
+
+.border-left
+{
+  border-left: 3px solid orange; //zmienna
+  font-weight: bold;
+}
