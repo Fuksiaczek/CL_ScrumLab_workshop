@@ -1,9 +1,20 @@
-.notifications {
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  height: 90%;
+  position: absolute;
+  top: 160px;
+  left: 220px;
+}
 
+.notifications {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-content: center;
-
 
   .notifications-container {
     display: flex;
@@ -12,6 +23,7 @@
     flex-direction: column;
 
     .notifications-element {
+      background: $color-background;
       display: flex;
       align-items: center;
       position: relative;
@@ -31,11 +43,9 @@
       line-height: 2rem;
       font-size: 1.3rem;
       margin: 10px;
-
     }
 
     .info {
-
       color: $color-infoText;
       border: 1px $color-infoText dashed;
 
@@ -63,22 +73,25 @@
         background-color: $color-successText;
         color: #FFF;
       }
-
     }
 
     .fa-times {
       position: absolute;
-      top: 0.2rem;
-      right: 0.2rem;
+      top: 0.4rem;
+      right: 0.4rem;
       line-height: 1.1rem;
       font-size: 0.8rem;
       text-align: center;
       border-radius: 3px;
       width: 1.1rem;
       height: 1rem;
-
+      cursor: pointer;
     }
-
   }
+}
 
+// class to close notifications
+
+.close {
+  visibility: hidden;
 }

@@ -2,16 +2,16 @@
 <html lang="pl">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Zaplanuj Jedzonko</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Charmonman|Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/main.css" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/e817da4ca7.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e817da4ca7.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
     </ul>
 </header>
 <main>
-    <section>
+    <section class="carousel-main">
         <div class="container">
             <div class="carousel">
                 <ul>
@@ -103,15 +103,53 @@
     </section>
     <section>
         <!-- aobut me -->
+        <div class="about_the_author">
+            <div class="photo">
+                <div class="The_author_photo">
+                    <img src="None" alt="The_author_photo">
+                </div>
+            </div>
+            <div class="textOAutorze">
+                <h3>Lorem ipsum dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. &nbsp;Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
+            </div>
+        </div>
     </section>
-    <section>
+    <section class="three-column-main">
         <!-- three columns -->
+        <section class="container three-columns-content">
+            <article class="three-columns-section">
+                <h3 class="three-columns-title">Lorem ipsum dolor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cupiditate doloremque dolorum eum fugit
+                    iure iusto, maiores maxime.</p>
+            </article>
+            <article class="three-columns-section column-list">
+                <h3 class="three-columns-title">Lorem ipsum dolor</h3>
+                <ul>
+                    <li><a href="#">consectetur adipisicing elit</a></li>
+                    <li><a href="#">cupiditate doloremque</a></li>
+                    <li><a href="#">fugit iure iusto, maiores </a></li>
+                    <li><a href="#">nisi quae qui quia quo ullam</a></li>
+                </ul>
+            </article>
+            <article class="three-columns-section third-section">
+                <h3 class="three-columns-title">Lorem ipsum dolor</h3>
+                <form>
+                    <input type="text" class="type-here"/>
+                    <input type="submit" value="Lorem" class="button"/>
+                </form>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </article>
+        </section>
     </section>
 </main>
 <footer>
-    <div class="container">
-        <!-- copyright -->
-    </div>
+    <!-- copyright -->
+    <p>Copyright <span>Zaplanuj Jedzonko.pl</span></p>
 </footer>
 
 <script src="./js/index.js"></script>
