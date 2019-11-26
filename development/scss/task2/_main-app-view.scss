@@ -1,0 +1,66 @@
+.aside-menu
+{
+  width: 150px;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color:  $color-headText;
+
+
+  ul{
+    padding: 0;
+    width: 100%;
+
+    li
+    {
+      width: 100%;
+      position: relative;
+    }
+  }
+}
+.aside-menu a
+{
+  color: $color-background;
+  display: block;
+  padding: 20px 0 20px 20px;
+}
+.aside-menu .arrow-icon
+{
+  position: absolute;
+  top: 35%;
+  left: 85%;
+  color: $color-headButton; //zmienna
+}
+
+.border-left
+{
+  border-left: 3px solid $color-headButton; //zmienna
+  font-weight: bold;
+}
+
+.login-name
+{
+  padding-right: 50px;
+  color: $color-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i
+  {
+    color: $color-headButton;
+  }
+
+  p
+  {
+    font-size: 1rem;
+    padding-right: 30px;
+  }
+
+}
+
+body
+{
+  background-image: url("/images/background-image.png");
+}
