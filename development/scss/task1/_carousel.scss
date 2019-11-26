@@ -1,4 +1,4 @@
-section:nth-of-type(1) {
+section:nth-of-type(1){
   background-color: $color-background;
 }
 
@@ -7,6 +7,44 @@ section:nth-of-type(1) {
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+.visible {
+  display: inline-block;
+}
+
+.slide {
+  height: 400px;
+  width: 100%;
+  background-color: $color-background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .slide-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    img {
+      height: 100%;
+    }
+  }
+
+  .slide-text {
+    width: 70%;
+
+    span {
+      font-size: 1.5rem;
+      display: block;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+div {
   ul {
     display: flex;
     text-align: center;
@@ -16,41 +54,8 @@ section:nth-of-type(1) {
       height: 400px;
       text-align: center;
       display: none;
-      .slide {
-        height: 400px;
-        width: 100%;
-        background-color: $color-background;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        .slide-img {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 100%;
-          width: 100%;
-          img {
-            height: 100%;
-          }
-        }
-        .slide-text {
-          width: 70%;
-
-          span {
-            font-size: 1.5rem;
-            display: block;
-            padding-bottom: 10px;
-          }
-        }
-      }
     }
   }
-}
-
-.visible {
-  display: inline-block;
 }
 
 .slide-buttons {
