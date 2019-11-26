@@ -1,14 +1,37 @@
+// main-app-view
+
+const liList = document.querySelectorAll(".aside-menu li");
+
+for (let i = 0; i < liList.length; i++)
+{
+
+    liList[i].querySelector("a").addEventListener("click", function ()
+    {
+        for (let j = 0; j < liList.length ; j++) {
+            liList[j].querySelector("i").classList.remove("fas");
+            liList[j].querySelector("i").classList.remove("fa-chevron-right");
+            liList[j].querySelector("a").classList.remove("border-left");
+        }
+
+        liList[i].querySelector("i").classList.add("fas");
+        liList[i].querySelector("i").classList.add("fa-chevron-right");
+        liList[i].querySelector("a").classList.add("border-left");
+    });
+
+}
+
+// saving name
+
 document.addEventListener("DOMContentLoaded", function() {
 
-    const nameInput = document.querySelector('.name-input'); //input
-    const readyButton = document.querySelector('.send'); // submit button
-    const nameProfil = document.querySelector('.name'); // text to change to name
+    const nameInput = document.querySelector('input[name="lastname"]');
+    const readyButton = document.querySelector('#name_button');
+    const nameProfil = document.querySelector('.name');
     const defaultNameProfil = nameProfil.innerHTML;
-    const firstPanel = document.querySelector('.first-panel'); // panel z powitaniem
-    const mainPanel = document.querySelector('.main-panel'); // panel główny
+    const firstPanel = document.querySelector('.firstvisit_form');
+    const mainPanel = document.querySelector('.main-panel');
 
 
-    // event na przycisk submit
     readyButton.addEventListener('click', function storeName() {
 
         let nameValue = nameInput.value; // wartość inputa (Imię)
@@ -22,17 +45,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    //sprawdzanie czy imię już istnieje w bazie i zmiana imienia w nagłówku na to wpisane
-
     function checkName() {
-        if (localStorage.getItem("savedName") != null) {
+        if (localStorage.getItem("savedName") != null) { // if the name exists
             nameProfil.innerHTML = localStorage.savedName;
             firstPanel.style.display = "none";
             mainPanel.style.display = "flex";
 
             return nameProfil.innerHTML;
 
-        } else {
+        } else { // if the name doesn't exist
             nameProfil.innerHTML = defaultNameProfil;
             firstPanel.style.display = "flex";
             mainPanel.style.display = "none";
@@ -41,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    nameProfil.addEventListener("click", function () {
+    nameProfil.addEventListener("click", function () { // when clicking on the name, the local Storage is cleared
         if (localStorage.getItem("savedName") != null) {
             localStorage.removeItem("savedName");
             location.reload();

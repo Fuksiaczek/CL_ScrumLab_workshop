@@ -1,0 +1,11 @@
+body {
+  width: 100%;
+  font-size: 14px; // wielkość bazowa
+  font-family: $font-text;
+  background-color: $color-navigation;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
