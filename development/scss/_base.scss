@@ -1,6 +1,10 @@
+html
+{
+  font-size: 14px; // wielkość bazowa
+}
+
 body {
   width: 100%;
-  font-size: 14px; // wielkość bazowa
   font-family: $font-text;
   background-color: $color-navigation;
 }

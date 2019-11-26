@@ -1,22 +1,21 @@
-.carousel-main {
+.carousel-main {;
   background-color: $color-background;
 }
 
 .carousel {
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.visible {
-  display: inline-block;
-}
-
 .slide {
-  height: 400px;
+  height: inherit;
   width: 100%;
   background-color: $color-background;
+  border-bottom: 1px solid $color-headText;
+  border-top: 1px solid $color-headText;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,20 +43,24 @@
   }
 }
 
-div {
+.carousel {
   ul {
+    height: inherit;
+    width: 100%;
     display: flex;
     text-align: center;
-    width: 100%;
     li {
       width: 100%;
-      height: 400px;
+      height: inherit;
       text-align: center;
       display: none;
     }
   }
 }
 
+.carousel .visible-slide {
+  display: inline-block;
+}
 .slide-buttons {
   height: 400px;
   width: 100%;
@@ -67,3 +70,4 @@ div {
   justify-content: space-between;
   padding: 0 30px;
 }
+
