@@ -76,3 +76,13 @@ document.addEventListener("DOMContentLoaded", function() {
     checkName();
 
 });
+
+// add_recipe & add_plan widgets
+
+  // document.getElementById('add_recipe').addEventListener('click', function(){
+  // document.querySelector('.OknaModalneDodawaniaPrzepisu').style.display = 'flex'
+  // });
+
+  // document.getElementById('add_plan').addEventListener('click', function(){
+  // document.querySelector('.OknaModalneDodawaniaPlanu').style.display = 'flex'
+  // });
