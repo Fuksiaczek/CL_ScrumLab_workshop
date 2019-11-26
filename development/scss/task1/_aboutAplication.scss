@@ -1,6 +1,6 @@
 .columns {
   width: 100%;
-  background-color: $color-background;
+  background-color: $color-headText;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -10,6 +10,7 @@
   display: flex;
   justify-content: space-around;
   align-content: center;
+  background-color: $color-background;
 
   article {
     font-family: $font-text;
