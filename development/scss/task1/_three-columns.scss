@@ -26,6 +26,7 @@
 
   p {
     font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   a {
@@ -68,6 +69,7 @@
 
 .column-list {
   li {
+    list-style-type: disc;
     padding-bottom: 5px;
     list-style-position: inside;
   }
