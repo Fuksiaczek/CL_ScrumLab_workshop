@@ -55,4 +55,64 @@
   background-image: url("../../images/background-image.png");
 }
 
-
+.firstvisit_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px dashed $color-tableIconText;
+  width: 80%;
+  height: 90%;
+  position: absolute;
+  background-color: $color-background;
+  top: 140px;
+  left: 220px;
+  color: $color-headText;
+  .width_limit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 400px;
+    height: 30%;
+    text-align: center;
+    margin-top: 80px;
+    h2 {
+      font-size: 30px;
+      font-family: "Open Sans", sans-serif;
+      margin-bottom: 18px;
+    }
+    h3 {
+      font-size: 24px;
+      font-family: "Open Sans", sans-serif;
+      margin-bottom: 18px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      input {
+        width: 240px;
+        height: 20px;
+        margin-bottom: 18px;
+      }
+      button {
+        border-style: none;
+        font-size: 16px;
+        color: #fff;
+        background-color: $color-headButton;
+        width: 100px;
+        height: 30px;
+        margin-bottom: 24px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    p {
+      font-size: 1rem;
+      font-family: "Open Sans", sans-serif;
+    }
+  }
+}
