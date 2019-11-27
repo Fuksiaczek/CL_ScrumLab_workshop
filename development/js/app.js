@@ -2,12 +2,10 @@
 
 const liList = document.querySelectorAll(".aside-menu li");
 
-for (let i = 0; i < liList.length; i++)
-{
+for (let i = 0; i < liList.length; i++) {
 
-    liList[i].querySelector("a").addEventListener("click", function ()
-    {
-        for (let j = 0; j < liList.length ; j++) {
+    liList[i].querySelector("a").addEventListener("click", function () {
+        for (let j = 0; j < liList.length; j++) {
             liList[j].querySelector("i").classList.remove("fas");
             liList[j].querySelector("i").classList.remove("fa-chevron-right");
             liList[j].querySelector("a").classList.remove("border-left");
@@ -22,7 +20,7 @@ for (let i = 0; i < liList.length; i++)
 
 // saving name
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     const nameInput = document.querySelector('input[name="lastname"]');
     const readyButton = document.querySelector('#name_button');
@@ -76,40 +74,47 @@ document.addEventListener("DOMContentLoaded", function() {
     checkName();
 
 
-// add_recipe & add_plan widgets
+    // add_recipe & add_plan widgets
 
-// document.getElementById('add_recipe').addEventListener('click', function(){
-// document.querySelector('.OknaModalneDodawaniaPrzepisu').style.display = 'flex'
-// });
+    // document.getElementById('add_recipe').addEventListener('click', function(){
+    // document.querySelector('.OknaModalneDodawaniaPrzepisu').style.display = 'flex'
+    // });
 
-// document.getElementById('add_plan').addEventListener('click', function(){
-// document.querySelector('.OknaModalneDodawaniaPlanu').style.display = 'flex'
-// });
+    document.getElementById('add_plan').addEventListener('click', function () {
+        document.querySelector('.add_plan_modal').style.display = 'flex'
+    });
+
+    //closing add_new_plan window
 
 
-// closing the widgets notifications
+    document.getElementById('exit_plan_button').addEventListener('click', function () {
+        document.querySelector('.add_plan_modal').style.display = 'none'
+    });
 
-const exitFirst = document.querySelector(".exit-first");
-const exitSecond = document.querySelector(".exit-second");
-const exitThird = document.querySelector(".exit-third");
 
-function closeInfoOne() {
-    exitFirst.addEventListener("click", function (e) {
-        this.parentNode.classList.add('close');
-    })
-}
-function closeInfoTwo() {
-    exitSecond.addEventListener("click", function (e) {
-        this.parentNode.classList.add('close');
-    })
-}
-function closeInfoThree() {
-    exitThird.addEventListener("click", function (e) {
-        this.parentNode.classList.add('close');
-    })
-}
-closeInfoOne();
-closeInfoTwo();
-closeInfoThree();
+    // closing the widgets notifications
+
+    const exitFirst = document.querySelector(".exit-first");
+    const exitSecond = document.querySelector(".exit-second");
+    const exitThird = document.querySelector(".exit-third");
+
+    function closeInfoOne() {
+        exitFirst.addEventListener("click", function (e) {
+            this.parentNode.classList.add('close');
+        })
+    }
+    function closeInfoTwo() {
+        exitSecond.addEventListener("click", function (e) {
+            this.parentNode.classList.add('close');
+        })
+    }
+    function closeInfoThree() {
+        exitThird.addEventListener("click", function (e) {
+            this.parentNode.classList.add('close');
+        })
+    }
+    closeInfoOne();
+    closeInfoTwo();
+    closeInfoThree();
 
 });
