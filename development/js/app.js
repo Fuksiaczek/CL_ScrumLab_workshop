@@ -1,12 +1,28 @@
-// main-app-view
+// main-app-view - search elements
 
 const liList = document.querySelectorAll(".aside-menu li");
+const pulpitEl = document.querySelector(".aside-menu .pulpit");
+const przepisyEl = document.querySelector(".aside-menu .przepisy");
+const planyEl = document.querySelector(".aside-menu .plany");
+
+// saving name - search elements
+
+const nameInput = document.querySelector('input[name="lastname"]');
+const readyButton = document.querySelector('#name_button');
+const nameProfil = document.querySelector('.name');
+const defaultNameProfil = nameProfil.innerHTML;
+const firstPanel = document.querySelector('.firstvisit_form');
+const mainPanel = document.querySelector('.main-panel-plany');
+
+// main-app-view
+
 
 for (let i = 0; i < liList.length; i++)
 {
 
     liList[i].querySelector("a").addEventListener("click", function ()
     {
+
         for (let j = 0; j < liList.length ; j++) {
             liList[j].querySelector("i").classList.remove("fas");
             liList[j].querySelector("i").classList.remove("fa-chevron-right");
@@ -16,20 +32,19 @@ for (let i = 0; i < liList.length; i++)
         liList[i].querySelector("i").classList.add("fas");
         liList[i].querySelector("i").classList.add("fa-chevron-right");
         liList[i].querySelector("a").classList.add("border-left");
-    });
 
+    });
 }
+
+
+
+
 
 // saving name
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    const nameInput = document.querySelector('input[name="lastname"]');
-    const readyButton = document.querySelector('#name_button');
-    const nameProfil = document.querySelector('.name');
-    const defaultNameProfil = nameProfil.innerHTML;
-    const firstPanel = document.querySelector('.firstvisit_form');
-    const mainPanel = document.querySelector('.main-panel');
+
 
 
     readyButton.addEventListener('click', function storeName() {

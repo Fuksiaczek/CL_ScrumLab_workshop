@@ -29,39 +29,115 @@
     <aside>
         <div class="aside-menu">
             <ul>
-                <li>
-                    <a href="#">Pulpit</a>
+                <li class="pulpit">
+                    <a href="#" >Pulpit</a>
                     <i class="arrow-icon"></i>
                 </li>
-                <li>
-                    <a href="#">Przepisy</a>
+                <li class="przepisy">
+                    <a href="#" >Przepisy</a>
                     <i class="arrow-icon"></i>
                 </li>
-                <li>
-                    <a href="#">Plany</a>
+                <li class="plany">
+                    <a href="#" >Plany</a>
                     <i class="arrow-icon"></i>
                 </li>
             </ul>
         </div>
     </aside>
-    <div class="firstvisit_form">
-        <div class="width_limit">
-            <h2>Witaj,</h2>
-            <h3>wygląda na to, że jesteś tutaj pierwszy raz!</h3>
-            <form>
-                <input type="text" name="lastname" placeholder="tutaj wpisz jak masz na imię">
-                <button id="name_button" type="submit" value="Submit">Gotowe!</button>
-            </form>
-            <p>Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :) </p>
+    <section class="app-view">
+        <div class="firstvisit_form visible">
+            <div class="width_limit">
+                <h2>Witaj,</h2>
+                <h3>wygląda na to, że jesteś tutaj pierwszy raz!</h3>
+                <form>
+                    <input type="text" name="lastname" placeholder="tutaj wpisz jak masz na imię">
+                    <button id="name_button" type="submit" value="Submit">Gotowe!</button>
+                </form>
+                <p>Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :) </p>
+            </div>
         </div>
-    </div>
 
-<!-- do dodania main panel -->
-    <div class="main-panel">
-        <p>MAIN PANEL</p>
-    </div>
+        <!-- do dodania main panel -->
+        <div class="main-panel-plany">
+            <div class="width_limit">
+                <p>Twój plan na <span>{nr_tygodnia}</span> tydzień</p>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Poniedziałek</th>
+                                <th scope="col">Wtorek</th>
+                                <th scope="col">Środa</th>
+                                <th scope="col">Czwartek</th>
+                                <th scope="col">Piątek</th>
+                                <th scope="col">Sobota</th>
+                                <th scope="col">Niedziela</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>śniadanie</td>
+                                <td>śniadanie</td>
+                                <td>śniadanie</td>
+                                <td>śniadanie</td>
+                                <td>śniadanie</td>
+                                <td>śniadanie</td>
+                                <td>śniadanie</td>
+                            </tr>
+                            <tr>
+                                <td>drugie śniadanie</td>
+                                <td>drugie śniadanie</td>
+                                <td>drugie śniadanie</td>
+                                <td>drugie śniadanie</td>
+                                <td>drugie śniadanie</td>
+                                <td>drugie śniadanie</td>
+                                <td>drugie śniadanie</td>
+                            </tr>
+                            <tr>
+                                <td>zupa</td>
+                                <td>zupa</td>
+                                <td>zupa</td>
+                                <td>zupa</td>
+                                <td>zupa</td>
+                                <td>zupa</td>
+                                <td>zupa</td>
+                            </tr>
+                            <tr>
+                                <td>drugie danie</td>
+                                <td>drugie danie</td>
+                                <td>drugie danie</td>
+                                <td>drugie danie</td>
+                                <td>drugie danie</td>
+                                <td>drugie danie</td>
+                                <td>drugie danie</td>
+                            </tr>
+                            <tr>
+                                <td>kolacja</td>
+                                <td>kolacja</td>
+                                <td>kolacja</td>
+                                <td>kolacja</td>
+                                <td>kolacja</td>
+                                <td>kolacja</td>
+                                <td>kolacja</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="navigate-buttons">
+                    <a href="#">
+                        <i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>
+                        <span>poprzedni</span>
+                    </a>
+                    <a href="#"><span>następny</span>
+                        <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
 
 
+
+    </section>
 
 </main>
 <script src="./js/app.js"></script>

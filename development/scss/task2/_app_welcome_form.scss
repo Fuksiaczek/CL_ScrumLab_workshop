@@ -1,16 +1,8 @@
 .firstvisit_form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    border: 1px dashed $color-tableIconText;
+    @include base-app-view;
     width: 80%;
     height: 90%;
-    position: absolute;
-    background-color: $color-background;
-    top: 160px;
-    left: 220px;
-    color: $color-headText;
+
     .width_limit {
       display: flex;
       flex-direction: column;
