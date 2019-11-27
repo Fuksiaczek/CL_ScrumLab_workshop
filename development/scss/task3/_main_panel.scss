@@ -47,5 +47,87 @@
         }
       }
     }
+
+    .notifications-widget {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .notifications-element {
+        background: $color-background;
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 680px;
+        height: 60px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin: 5px;
+      }
+
+      .fa-info, .fa-exclamation, .fa-check {
+        display: block;
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        line-height: 2rem;
+        font-size: 1.3rem;
+        margin: 10px;
+      }
+
+      .info {
+        color: $color-infoText;
+        border: 1px $color-infoText dashed;
+
+        .fas {
+          background-color: $color-infoText;
+          color: #FFF;
+        }
+      }
+
+      .warning {
+        color: $color-warningText;
+        border: 1px $color-warningText dashed;
+
+        .fas {
+          background-color: $color-warningText;
+          color: #FFF;
+        }
+      }
+
+      .success  {
+        color: $color-successText;
+        border: 1px $color-successText dashed;
+
+        .fas {
+          background-color: $color-successText;
+          color: #FFF;
+        }
+      }
+
+      .fa-times {
+        position: absolute;
+        top: 0.4rem;
+        right: 0.4rem;
+        line-height: 1.1rem;
+        font-size: 0.8rem;
+        text-align: center;
+        border-radius: 3px;
+        width: 1.1rem;
+        height: 1rem;
+        cursor: pointer;
+      }
+    }
+
+    // class to close notifications
+
+    .close {
+      visibility: hidden;
+    }
   }
 }
+
+
+

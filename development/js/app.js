@@ -49,13 +49,13 @@ document.addEventListener("DOMContentLoaded", function() {
         if (localStorage.getItem("savedName") != null) { // if the name exists
             nameProfil.innerHTML = localStorage.savedName;
             firstPanel.style.display = "none";
-            mainPanel.style.display = "flex";
+            mainPanel.style.display = "block";
 
             return nameProfil.innerHTML;
 
         } else { // if the name doesn't exist
             nameProfil.innerHTML = defaultNameProfil;
-            firstPanel.style.display = "flex";
+            firstPanel.style.visibility = 'inline-block';
             mainPanel.style.display = "none";
 
             return nameProfil.innerHTML;
@@ -75,14 +75,41 @@ document.addEventListener("DOMContentLoaded", function() {
 
     checkName();
 
-});
 
 // add_recipe & add_plan widgets
 
-  // document.getElementById('add_recipe').addEventListener('click', function(){
-  // document.querySelector('.OknaModalneDodawaniaPrzepisu').style.display = 'flex'
-  // });
+// document.getElementById('add_recipe').addEventListener('click', function(){
+// document.querySelector('.OknaModalneDodawaniaPrzepisu').style.display = 'flex'
+// });
 
-  // document.getElementById('add_plan').addEventListener('click', function(){
-  // document.querySelector('.OknaModalneDodawaniaPlanu').style.display = 'flex'
-  // });
+// document.getElementById('add_plan').addEventListener('click', function(){
+// document.querySelector('.OknaModalneDodawaniaPlanu').style.display = 'flex'
+// });
+
+
+// closing the widgets notifications
+
+const exitFirst = document.querySelector(".exit-first");
+const exitSecond = document.querySelector(".exit-second");
+const exitThird = document.querySelector(".exit-third");
+
+function closeInfoOne() {
+    exitFirst.addEventListener("click", function (e) {
+        this.parentNode.classList.add('close');
+    })
+}
+function closeInfoTwo() {
+    exitSecond.addEventListener("click", function (e) {
+        this.parentNode.classList.add('close');
+    })
+}
+function closeInfoThree() {
+    exitThird.addEventListener("click", function (e) {
+        this.parentNode.classList.add('close');
+    })
+}
+closeInfoOne();
+closeInfoTwo();
+closeInfoThree();
+
+});
