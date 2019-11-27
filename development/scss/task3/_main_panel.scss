@@ -1,0 +1,51 @@
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  height: 90%;
+  position: absolute;
+  top: 160px;
+  left: 220px;
+  color: $color-headText;
+  padding: 0;
+  .panel-top {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .widgets {
+      width: 40%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: $color-successText;
+      div {
+        width: 45%;
+        height: 80%;
+        border: 1px dashed $color-successText;
+        background-color: $color-background;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        text-align: center;
+        i{
+            font-size: 70px;
+        }
+        h3{
+            font-size: 1.5rem;
+            margin-top: 1.2rem;
+        }
+      }
+    }
+  }
+}
