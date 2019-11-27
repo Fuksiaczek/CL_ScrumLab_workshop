@@ -1,8 +1,17 @@
-body {
-  width: 100%;
+html {
   font-size: 14px; // wielkość bazowa
   font-family: $font-text;
-  background-color: $color-navigation;
+}
+
+body {
+  width: 100%;
+  font-family: $font-text;
+  background-color: $color-headText;
+}
+
+
+h3 {
+  font-size: 1.3rem;
 }
 
 .container {
