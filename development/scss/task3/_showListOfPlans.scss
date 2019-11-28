@@ -1,0 +1,16 @@
+.showListOfPlans {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-background;
+  width: 80%;
+  height: 90%;
+  position: absolute;
+  top: 160px;
+  left: 220px;
+  color: $color-headText;
+  padding: 40px;
+  z-index: 500;
+  overflow: auto;
+}
