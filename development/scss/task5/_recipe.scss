@@ -7,7 +7,7 @@
   top: 160px;
   left: 220px;
   color: $color-headText;
-  max-width: 1470px;
+  width: 1470px;
   height: 700px;
   background-color: $color-background;
   border: 1px $color-tableIconText dashed;
@@ -20,6 +20,7 @@
     height: 90%;
 
     .recipe-list-title {
+      width: 100%;
       height: 10%;
       display: flex;
       justify-content: space-between;
@@ -41,52 +42,55 @@
     }
 
     .table-scroll {
-      height: 90%;
+      width: 100%;
+      height: 100%;
       overflow-y: auto;
 
-      .table-header {
-        tr {
-          border-top: 2px $color-tableIconText*1.4 solid;
-          th {
-            border-bottom: 2px $color-tableIconText*1.4 solid;
-            padding: 1rem;
-            color: $color-navigation;
-            font-size: 1.5rem;
+      table {
+        width: 95%;
+
+        .table-header {
+          tr {
+            border-top: 2px $color-tableIconText*1.4 solid;
+            th {
+              border-bottom: 2px $color-tableIconText*1.4 solid;
+              padding: 1rem;
+              color: $color-navigation;
+              font-size: 1.5rem;
+            }
           }
         }
-      }
 
-      .table-content {
-        height: 100%;
-        font-weight: 300;
-        overflow-y: scroll;
+        .table-content {
+          font-weight: 300;
 
-        td {
-          margin: 1rem;
-          padding: 1rem;
-          color: $color-tableIconText;
-          opacity: .7;
-          font-size: 1.2rem;
-          border-bottom: 2px $color-tableIconText*1.4 solid;
-          vertical-align: top;
-        }
+          td {
+            margin: 1rem;
+            padding: 1rem;
+            color: $color-tableIconText;
+            opacity: .7;
+            font-size: 1.2rem;
+            border-bottom: 2px $color-tableIconText*1.4 solid;
+            vertical-align: top;
+          }
 
-        td:nth-of-type(3) {
-          font-size: 1rem;
-          width: 60%;
-        }
+          td:nth-of-type(3) {
+            font-size: 1rem;
+            width: 60%;
+          }
 
-        .fa-edit {
-          padding-right: 1rem;
-          font-size: 1.5rem;
-          color: $color-warningText;
-          cursor: pointer;
-        }
+          .fa-edit {
+            padding-right: 1rem;
+            font-size: 1.5rem;
+            color: $color-warningText;
+            cursor: pointer;
+          }
 
-        .fa-trash-alt {
-          font-size: 1.5rem;
-          color: $color-binColor;
-          cursor: pointer;
+          .fa-trash-alt {
+            font-size: 1.5rem;
+            color: $color-binColor;
+            cursor: pointer;
+          }
         }
       }
 
