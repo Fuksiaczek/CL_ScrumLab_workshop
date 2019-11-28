@@ -2,12 +2,10 @@
 
 const liList = document.querySelectorAll(".aside-menu li");
 
-for (let i = 0; i < liList.length; i++)
-{
+for (let i = 0; i < liList.length; i++) {
 
-    liList[i].querySelector("a").addEventListener("click", function ()
-    {
-        for (let j = 0; j < liList.length ; j++) {
+    liList[i].querySelector("a").addEventListener("click", function () {
+        for (let j = 0; j < liList.length; j++) {
             liList[j].querySelector("i").classList.remove("fas");
             liList[j].querySelector("i").classList.remove("fa-chevron-right");
             liList[j].querySelector("a").classList.remove("border-left");
@@ -22,7 +20,7 @@ for (let i = 0; i < liList.length; i++)
 
 // saving name
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     const nameInput = document.querySelector('input[name="lastname"]');
     const readyButton = document.querySelector('#name_button');
@@ -30,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const defaultNameProfil = nameProfil.innerHTML;
     const firstPanel = document.querySelector('.firstvisit_form');
     const mainPanel = document.querySelector('.main-panel');
+    console.log(mainPanel);
     const recipePanel = document.querySelector('.recipePanel');
 
 
@@ -51,8 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
             nameProfil.innerHTML = localStorage.savedName;
             firstPanel.style.display = "none";
             mainPanel.style.display = "block";
-            recipePanel.style.display = "none";
-
+            recipePanel.style.display = "block";
             return nameProfil.innerHTML;
 
         } else { // if the name doesn't exist
@@ -60,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function() {
             firstPanel.style.visibility = 'inline-block';
             mainPanel.style.display = "none";
             recipePanel.style.display = "none";
-
             return nameProfil.innerHTML;
         }
     }
@@ -68,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
     nameProfil.addEventListener("click", function () { // when clicking on the name, the local Storage is cleared
         if (localStorage.getItem("savedName") != null) {
             localStorage.removeItem("savedName");
+            firstPanel.style.display = 'block';
             location.reload();
         } else {
             location.reload();
@@ -79,18 +77,25 @@ document.addEventListener("DOMContentLoaded", function() {
     checkName();
 
 
-// add_recipe & add_plan widgets
+    // add_recipe & add_plan widgets
 
-// document.getElementById('add_recipe').addEventListener('click', function(){
-// document.querySelector('.OknaModalneDodawaniaPrzepisu').style.display = 'flex'
-// });
+    // document.getElementById('add_recipe').addEventListener('click', function(){
+    // document.querySelector('.OknaModalneDodawaniaPrzepisu').style.display = 'flex'
+    // });
 
-// document.getElementById('add_plan').addEventListener('click', function(){
-// document.querySelector('.OknaModalneDodawaniaPlanu').style.display = 'flex'
-// });
+    document.getElementById('add_plan').addEventListener('click', function () {
+        document.querySelector('.add_plan_modal').style.display = 'flex'
+    });
+
+    //closing add_new_plan window
 
 
-// closing the widgets notifications
+    document.getElementById('exit_plan_button').addEventListener('click', function () {
+        document.querySelector('.add_plan_modal').style.display = 'none'
+    });
+
+
+    // closing the widgets notifications
 
     const exitFirst = document.querySelector(".exit-first");
     const exitSecond = document.querySelector(".exit-second");
@@ -116,37 +121,56 @@ document.addEventListener("DOMContentLoaded", function() {
     closeInfoThree();
 
 
-    // get user name
 
-    checkName();
+// to show all the recipes (recipe panel)
 
-    const tableBody = document.querySelector('.table-content');
-    const allRecipes = JSON.parse(localStorage.getItem('recipes'));
+    if (localStorage.getItem('recipes') !== undefined && localStorage.getItem('recipes') !== null) { // if recipes in localStorage exist
 
-    // storage 'recipes'
+        const tableBody = document.querySelector('.table-content');
+        const allRecipes = JSON.parse(localStorage.getItem('recipes'));     //localStorage for recipes - 'recipes'
+        const recipeKeys = Object.keys(allRecipes);
 
-        function takeRecipesFromLocalStorage(newRecipe) {
+        for (let i = 0; i < recipeKeys.length; i++) {
+            const recipeRow = document.createElement('tr');
+            const recipeId = document.createElement('td');
+            const recipeName = document.createElement('td');
+            const recipeDescription = document.createElement('td');
+            const recipeActions = document.createElement('td');
 
-            if (localStorage.getItem('recipes') != null) { // if exists
+            recipeId.innerText = i + 1;
+            recipeName.innerText = recipeKeys[i];
+            recipeDescription.innerText = allRecipes[recipeKeys[i]]["description"];
 
-                newRecipe.forEach(function (el) {
+            // edit button
+            const editButton = document.createElement("i");
+            const editButtonClass = document.createAttribute("class");
+            editButtonClass.value = "fas fa-edit";
+            editButton.setAttributeNode(editButtonClass);
 
-                    let recipeId = el.id;
-                    let recipeName = el.title;
-                    let recipeAbout = el.description;
+            // delete button
+            const deleteButton = document.createElement("i");
+            const deleteButtonClass = document.createAttribute("class");
+            deleteButtonClass.value = "far fa-trash-alt";
+            deleteButton.setAttributeNode(deleteButtonClass);
 
-                    let tr = document.createElement("tr");
-                    let td = tr.appendChild(document.createElement('td'));
+            deleteButton.addEventListener("click",function () {
+                this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);
+            });
 
+            editButton.addEventListener("click",function () {
+                this.parentElement.querySelector("p").setAttribute("contenteditable","true");
+            });
 
-                    td.innerText = recipeId;
-                    td.innerText = recipeName;
-                    td.innerText = recipeAbout;
-                    td.innerHTML = '<td><i class="fas fa-edit"></i><i class="far fa-trash-alt"></i></td>';
-
-                    tableBody.appendChild(tr).className = recipeId;
-                })
-            }
+            recipeRow.appendChild(recipeId);
+            recipeRow.appendChild(recipeName);
+            recipeRow.appendChild(recipeDescription);
+            recipeRow.appendChild(recipeActions);
+            recipeRow.appendChild(editButton);
+            recipeRow.appendChild(deleteButton);
+            tableBody.appendChild(recipeRow);
         }
-    takeRecipesFromLocalStorage(allRecipes);
+
+    }
 });
+
+
