@@ -6,6 +6,7 @@ To start development follow this instruction:
 
 * `clone` this repo
 * `npm install` all necessary npm packages
+* `npm run start` initially compiles sass files and starts `gulp serve` command. It listens for any change in the project and auto-magically reloads your project in the browser.
 
 
 ## Gulp usage
