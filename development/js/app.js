@@ -76,19 +76,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // add_recipe & add_plan widgets
 
-    // document.getElementById('add_recipe').addEventListener('click', function(){
-    // document.querySelector('.OknaModalneDodawaniaPrzepisu').style.display = 'flex'
-    // });
+    document.getElementById('add_recipe').addEventListener('click', function(){
+    document.querySelector('.add_recipe_modal').style.display = 'flex'
+    });
 
     document.getElementById('add_plan').addEventListener('click', function () {
         document.querySelector('.add_plan_modal').style.display = 'flex'
     });
 
-    //closing add_new_plan window
+    //closing add_new_plan and add_new_recipe window
 
 
     document.getElementById('exit_plan_button').addEventListener('click', function () {
         document.querySelector('.add_plan_modal').style.display = 'none'
+    });
+
+    document.getElementById('exit_recipe_button').addEventListener('click', function () {
+        document.querySelector('.add_recipe_modal').style.display = 'none'
     });
 
 
