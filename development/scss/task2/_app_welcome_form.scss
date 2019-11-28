@@ -1,5 +1,8 @@
 .firstvisit_form {
     @include base-app-view;
+    position: absolute;
+    top: 160px;
+    left: 220px;
     width: 80%;
     height: 90%;
 
