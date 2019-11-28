@@ -28,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const defaultNameProfil = nameProfil.innerHTML;
     const firstPanel = document.querySelector('.firstvisit_form');
     const mainPanel = document.querySelector('.main-panel');
-    console.log(mainPanel);
-    const recipePanel = document.querySelector('.recipePanel');
 
 
     readyButton.addEventListener('click', function storeName() {
@@ -50,14 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
             nameProfil.innerHTML = localStorage.savedName;
             firstPanel.style.display = "none";
             mainPanel.style.display = "block";
-            recipePanel.style.display = "block";
             return nameProfil.innerHTML;
 
         } else { // if the name doesn't exist
             nameProfil.innerHTML = defaultNameProfil;
             firstPanel.style.visibility = 'inline-block';
             mainPanel.style.display = "none";
-            recipePanel.style.display = "none";
             return nameProfil.innerHTML;
         }
     }
@@ -79,19 +75,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // add_recipe & add_plan widgets
 
-    // document.getElementById('add_recipe').addEventListener('click', function(){
-    // document.querySelector('.OknaModalneDodawaniaPrzepisu').style.display = 'flex'
-    // });
+    document.getElementById('add_recipe').addEventListener('click', function(){
+    document.querySelector('.add_recipe_modal').style.display = 'flex'
+    });
 
     document.getElementById('add_plan').addEventListener('click', function () {
         document.querySelector('.add_plan_modal').style.display = 'flex'
     });
 
-    //closing add_new_plan window
+    //closing add_new_plan and add_new_recipe window
 
 
     document.getElementById('exit_plan_button').addEventListener('click', function () {
         document.querySelector('.add_plan_modal').style.display = 'none'
+    });
+
+    document.getElementById('exit_recipe_button').addEventListener('click', function () {
+        document.querySelector('.add_recipe_modal').style.display = 'none'
     });
 
 
@@ -122,55 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// to show all the recipes (recipe panel)
-
-    if (localStorage.getItem('recipes') !== undefined && localStorage.getItem('recipes') !== null) { // if recipes in localStorage exist
-
-        const tableBody = document.querySelector('.table-content');
-        const allRecipes = JSON.parse(localStorage.getItem('recipes'));     //localStorage for recipes - 'recipes'
-        const recipeKeys = Object.keys(allRecipes);
-
-        for (let i = 0; i < recipeKeys.length; i++) {
-            const recipeRow = document.createElement('tr');
-            const recipeId = document.createElement('td');
-            const recipeName = document.createElement('td');
-            const recipeDescription = document.createElement('td');
-            const recipeActions = document.createElement('td');
-
-            recipeId.innerText = i + 1;
-            recipeName.innerText = recipeKeys[i];
-            recipeDescription.innerText = allRecipes[recipeKeys[i]]["description"];
-
-            // edit button
-            const editButton = document.createElement("i");
-            const editButtonClass = document.createAttribute("class");
-            editButtonClass.value = "fas fa-edit";
-            editButton.setAttributeNode(editButtonClass);
-
-            // delete button
-            const deleteButton = document.createElement("i");
-            const deleteButtonClass = document.createAttribute("class");
-            deleteButtonClass.value = "far fa-trash-alt";
-            deleteButton.setAttributeNode(deleteButtonClass);
-
-            deleteButton.addEventListener("click",function () {
-                this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);
-            });
-
-            editButton.addEventListener("click",function () {
-                this.parentElement.querySelector("p").setAttribute("contenteditable","true");
-            });
-
-            recipeRow.appendChild(recipeId);
-            recipeRow.appendChild(recipeName);
-            recipeRow.appendChild(recipeDescription);
-            recipeRow.appendChild(recipeActions);
-            recipeRow.appendChild(editButton);
-            recipeRow.appendChild(deleteButton);
-            tableBody.appendChild(recipeRow);
-        }
-
-    }
 });
 
 
