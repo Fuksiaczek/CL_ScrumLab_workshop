@@ -1,4 +1,4 @@
-.add_plan_modal {
+.add_recipe_modal {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -68,55 +68,86 @@
         max-width: 80%;
         border: 1px solid $color-tableIconText;
       }
-      #plan_name {
+      #recipe_name {
         width: 80.5%;
       }
-      #plan_description {
+      #recipe_description {
         width: 80%;
         height: 100px;
       }
-      #week_number {
-        width: 30px;
-        margin-left: 26px;
-        text-align: center;
-      }
-      &:nth-child(3){
-        justify-content: flex-start;
-      }
     }
   }
-  table{
-      max-width: 100%;
-      max-height: 400px;
-      width: 90%;
-      height: 400px;
+  .recipe_two_colls {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    div {
+      width: 50%;
+      height: 100%;
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      tr{
-          td{
-            border-bottom: 1px solid $color-tableIconText;
-            border-top: 1px solid $color-tableIconText;
-            width: 200px;
-            text-align: center;
-            padding:10px;
-            select {
-                width: 95%;
-            }
-          }
-          td:first-child{
-            font-size: 18px;
-            text-transform: uppercase;
-            font-weight: bold;
-          }
+      font-size: 22px;
+      color: $color-headText;
+      padding: 14px;
+      h3 {
+        font-size: 22px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        border-bottom: 2px solid $color-tableIconText;
+        padding: 5px;
       }
-      .meal_type{
-          font-size: 18px;
-          text-transform: uppercase;
-          font-weight: bold;
-          td:first-of-type {
-              border-top: none;
-          }
+      .input_div {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-direction: row;
+        textarea {
+          width: 90%;
+          max-width: 90%;
+          height: 100px;
+          border: 1px solid $color-tableIconText;
+          margin-right: 6px;
+        }
+        input {
+          height: 30px;
+          width: 94%;
+          border: 1px solid $color-tableIconText;
+          color: $color-headText;
+          margin-right: 6px;
+        }
+        i{
+            font-size: 28px;
+            color: $color-successText;
+        }
       }
+    }
+    .lists {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      overflow: scroll;
+      font-size: 14px;
+      margin: 10px;
+      margin-bottom: 2px;
+      padding-bottom: 2px;
+      ul{
+          list-style: disc;
+          margin-left: 10px;
+      }
+      ol{
+          list-style: decimal;
+          margin-left: 10px;
+      }
+      li{
+          margin: 4px;
+      }
+    }
   }
 }
