@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Zaplanuj Jedzonko</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Charmonman|Open+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e817da4ca7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/main.css" />
@@ -56,308 +56,90 @@
             </div>
         </div>
 
-        <!-- do dodania main panel -->
-        <div class="main-panel">
-            <div class="panel-top">
-                <div class="widgets">
-                    <div id="add_recipe">
-                        <i class="far fa-plus-square"></i>
-                        <h3>dodaj przepis</h3>
-                    </div>
-                    <div id="add_plan">
-                        <i class="far fa-plus-square"></i>
-                        <h3>dodaj plan</h3>
-                    </div>
+<!-- do dodania main panel -->
+    <div class="main-panel">
+        <div class="main-panel-plany">
+            <div class="width_limit">
+                <p>Twój plan na <span>{nr_tygodnia}</span> tydzień</p>
+                <div class="table">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th scope="col">Poniedziałek</th>
+                            <th scope="col">Wtorek</th>
+                            <th scope="col">Środa</th>
+                            <th scope="col">Czwartek</th>
+                            <th scope="col">Piątek</th>
+                            <th scope="col">Sobota</th>
+                            <th scope="col">Niedziela</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>śniadanie</td>
+                            <td>śniadanie</td>
+                            <td>śniadanie</td>
+                            <td>śniadanie</td>
+                            <td>śniadanie</td>
+                            <td>śniadanie</td>
+                            <td>śniadanie</td>
+                        </tr>
+                        <tr>
+                            <td>drugie śniadanie</td>
+                            <td>drugie śniadanie</td>
+                            <td>drugie śniadanie</td>
+                            <td>drugie śniadanie</td>
+                            <td>drugie śniadanie</td>
+                            <td>drugie śniadanie</td>
+                            <td>drugie śniadanie</td>
+                        </tr>
+                        <tr>
+                            <td>zupa</td>
+                            <td>zupa</td>
+                            <td>zupa</td>
+                            <td>zupa</td>
+                            <td>zupa</td>
+                            <td>zupa</td>
+                            <td>zupa</td>
+                        </tr>
+                        <tr>
+                            <td>drugie danie</td>
+                            <td>drugie danie</td>
+                            <td>drugie danie</td>
+                            <td>drugie danie</td>
+                            <td>drugie danie</td>
+                            <td>drugie danie</td>
+                            <td>drugie danie</td>
+                        </tr>
+                        <tr>
+                            <td>kolacja</td>
+                            <td>kolacja</td>
+                            <td>kolacja</td>
+                            <td>kolacja</td>
+                            <td>kolacja</td>
+                            <td>kolacja</td>
+                            <td>kolacja</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="notifications-widget">
-                    <div class="notifications-element info">
-                        <i class="fas fa-info"></i>
-                        <p>Masz już <span id="notification-counter">99</span> przepisów, nieźle!</p>
-                        <i class="fas fa-times exit-first"></i>
-                    </div>
-                    <div class="notifications-element warning">
-                        <i class="fas fa-exclamation"></i>
-                        <p>Pamiętaj aby dodać plan!</p>
-                        <i class="fas fa-times exit-second"></i>
-                    </div>
-                    <div class="notifications-element success">
-                        <i class="fas fa-check"></i>
-                        <p>Świetnie, że jesteś, udanego planowania i smacznego! :)</p>
-                        <i class="fas fa-times exit-third"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="add_plan_modal">
-            <div class="add_top">
-                <h3>Nowy Plan</h3>
-                <button id="exit_plan_button">Zapisz i zamknij</button>
-            </div>
-            <form>
-                <div>
-                    <label for="plan_name">Nazwa planu</label>
-                    <input type="text" id="plan_name" placeholder="np. Plan jarski na bezmięsny tydzień">
-                </div>
-                <div>
-                    <label for="plan_name">Opis planu</label>
-                    <textarea id="plan_description"
-                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
-                </div>
-                <div>
-                    <label for="week_number">Numer tygodnia</label>
-                    <input type="text" id="week_number" placeholder="4">
-                </div>
-            </form>
-            <table>
-                <tr class="meal_type">
-                    <td class="empty_one"></td>
-                    <td>Śniadanie</td>
-                    <td>Drugie Śniadanie</td>
-                    <td>Zupa</td>
-                    <td>Drugie Danie</td>
-                    <td>Kolacja</td>
-                </tr>
-                <tr>
-                    <td>Poniedziałek</td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Wtorek</td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Środa</td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Czwartek</td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Piątek</td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Sobota</td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Niedziela</td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="add_recipe_modal">
-            <div class="add_top">
-                <h3>Nowy Przepis</h3>
-                <button id="exit_recipe_button">Zapisz i zamknij</button>
-            </div>
-            <form>
-                <div>
-                    <label for="recipe_name">Nazwa przepisu</label>
-                    <input type="text" id="recipe_name" placeholder="np. Zapiekanka z ziemniakami i brukselką.">
-                </div>
-                <div>
-                    <label for="recipe_name">Opis przepisu</label>
-                    <textarea id="recipe_description"
-                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
-                </div>
-            </form>
-            <div class="recipe_two_colls">
-                <div>
-                    <h3>Instrukcje</h3>
-                    <div class="input_div">
-                        <textarea name="instructions" id="instructions" cols="30" rows="10" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
-                        <i class="fas fa-plus-square" id="add_instructions"></i>
-                    </div>
-                    <div class="lists">
-                        <ol id="instructions_list">
-                        </ol>
-                    </div>
-                </div>
-                <div>
-                    <h3>Składniki</h3>
-                    <div class="input_div">
-                        <input type="text" id="ingridients" placeholder="Tarty parmezan lub inny ser.">
-                        <i class="fas fa-plus-square" id="add_ingridients"></i>
-                    </div>
-                    <div class="lists">
-                        <ul id="ingridients_list">
-                        </ul>
-                    </div>
+                <div class="navigate-buttons">
+                    <a href="#">
+                        <i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>
+                        <span>poprzedni</span>
+                    </a>
+                    <a href="#"><span>następny</span>
+                        <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </main>
-    <script src="./js/app.js"></script>
+    </div>
+
+
+
+</main>
+<script src="./js/app.js"></script>
 
 </body>
 
