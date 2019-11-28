@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const defaultNameProfil = nameProfil.innerHTML;
     const firstPanel = document.querySelector('.firstvisit_form');
     const mainPanel = document.querySelector('.main-panel');
-    const recipeList = document.querySelector('.recipe-panel');
 
 
     readyButton.addEventListener('click', function storeName() {
@@ -48,15 +47,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (localStorage.getItem("savedName") != null) { // if the name exists
             nameProfil.innerHTML = localStorage.savedName;
             firstPanel.style.display = "none";
-            mainPanel.style.display = "flex";
-            recipeList.style.display = "flex";
+            mainPanel.style.display = "block";
             return nameProfil.innerHTML;
 
         } else { // if the name doesn't exist
             nameProfil.innerHTML = defaultNameProfil;
             firstPanel.style.visibility = 'inline-block';
             mainPanel.style.display = "none";
-            recipeList.style.display = "none";
             return nameProfil.innerHTML;
         }
     }
@@ -126,12 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // to show all the recipes (recipe panel)
 
-// to fix when there will be new recipe (logic)
-
-    const newRecipeButton = document.querySelector('fa-plus-square');
-    newRecipeButton.addEventListener('click', function () {
-        document.querySelector('.add_recipe_modal').style.display = 'flex';
-    });
+// DO UZUPEŁNIENIA JAK BĘDZIE NOWY PRZEPIS LOGIKA
 
     if (localStorage.getItem('recipes') !== undefined && localStorage.getItem('recipes') !== null) { // if recipes in localStorage exist
 
@@ -180,6 +172,19 @@ document.addEventListener("DOMContentLoaded", function () {
             recipeRow.appendChild(buttons);
             tableBody.appendChild(recipeRow)
         }
+
+
+        // licznik na pulpicie (Masz już ... przepisów)
+
+        // if (localStorage.getItem('recipes') === undefined){ // no recipes
+        //     const numberOfRecipes = 0;
+        // } else {
+        //     const numberOfRecipes = Object.keys(JSON.parse(localStorage.getItem('recipes'))).length;
+        // }
+        //
+        // const numberOfRecipesWidget = document.querySelector("div.blueWidget").querySelector("span");
+        // numberOfRecipesWidget.innerText = numberOfRecipes;
+
     }
 });
 
