@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const defaultNameProfil = nameProfil.innerHTML;
     const firstPanel = document.querySelector('.firstvisit_form');
     const mainPanel = document.querySelector('.main-panel');
+    const recipePanel = document.querySelector('.recipePanel');
 
 
     readyButton.addEventListener('click', function storeName() {
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
             nameProfil.innerHTML = localStorage.savedName;
             firstPanel.style.display = "none";
             mainPanel.style.display = "block";
+            recipePanel.style.display = "none";
 
             return nameProfil.innerHTML;
 
@@ -57,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
             nameProfil.innerHTML = defaultNameProfil;
             firstPanel.style.visibility = 'inline-block';
             mainPanel.style.display = "none";
+            recipePanel.style.display = "none";
 
             return nameProfil.innerHTML;
         }
@@ -89,27 +92,61 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // closing the widgets notifications
 
-const exitFirst = document.querySelector(".exit-first");
-const exitSecond = document.querySelector(".exit-second");
-const exitThird = document.querySelector(".exit-third");
+    const exitFirst = document.querySelector(".exit-first");
+    const exitSecond = document.querySelector(".exit-second");
+    const exitThird = document.querySelector(".exit-third");
 
-function closeInfoOne() {
-    exitFirst.addEventListener("click", function (e) {
-        this.parentNode.classList.add('close');
-    })
-}
-function closeInfoTwo() {
-    exitSecond.addEventListener("click", function (e) {
-        this.parentNode.classList.add('close');
-    })
-}
-function closeInfoThree() {
-    exitThird.addEventListener("click", function (e) {
-        this.parentNode.classList.add('close');
-    })
-}
-closeInfoOne();
-closeInfoTwo();
-closeInfoThree();
+    function closeInfoOne() {
+        exitFirst.addEventListener("click", function (e) {
+            this.parentNode.classList.add('close');
+        })
+    }
+    function closeInfoTwo() {
+        exitSecond.addEventListener("click", function (e) {
+            this.parentNode.classList.add('close');
+        })
+    }
+    function closeInfoThree() {
+        exitThird.addEventListener("click", function (e) {
+            this.parentNode.classList.add('close');
+        })
+    }
+    closeInfoOne();
+    closeInfoTwo();
+    closeInfoThree();
 
+
+    // get user name
+
+    checkName();
+
+    const tableBody = document.querySelector('.table-content');
+    const allRecipes = JSON.parse(localStorage.getItem('recipes'));
+
+    // storage 'recipes'
+
+        function takeRecipesFromLocalStorage(newRecipe) {
+
+            if (localStorage.getItem('recipes') != null) { // if exists
+
+                newRecipe.forEach(function (el) {
+
+                    let recipeId = el.id;
+                    let recipeName = el.title;
+                    let recipeAbout = el.description;
+
+                    let tr = document.createElement("tr");
+                    let td = tr.appendChild(document.createElement('td'));
+
+
+                    td.innerText = recipeId;
+                    td.innerText = recipeName;
+                    td.innerText = recipeAbout;
+                    td.innerHTML = '<td><i class="fas fa-edit"></i><i class="far fa-trash-alt"></i></td>';
+
+                    tableBody.appendChild(tr).className = recipeId;
+                })
+            }
+        }
+    takeRecipesFromLocalStorage(allRecipes);
 });
