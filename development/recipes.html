@@ -62,9 +62,9 @@
         <div class="recipe-container">
             <div class="recipe-list-title">
                 <span>Lista przepisów</span>
-                <a href="app.html">
+                <div id="add_recipe">
                     <i class="fas fa-plus-square"></i>
-                </a>
+                </div>
             </div>
 
             <div class="table-scroll">
@@ -86,14 +86,80 @@
                                 quibusdam quisquam quod recusandae rem repellat vel veniam, voluptas.</td>
                             <td><i class="fas fa-edit"></i><i class="far fa-trash-alt"></i></td>
                         </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Zapiekanka z ziemniakami i brukselką</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consectetur
+                                consequuntur deleniti eius expedita fugiat hic incidunt laudantium nihil nulla placeat
+                                quibusdam quisquam quod recusandae rem repellat vel veniam, voluptas.</td>
+                            <td><i class="fas fa-edit"></i><i class="far fa-trash-alt"></i></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Zapiekanka z ziemniakami i brukselką</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consectetur
+                                consequuntur deleniti eius expedita fugiat hic incidunt laudantium nihil nulla placeat
+                                quibusdam quisquam quod recusandae rem repellat vel veniam, voluptas.</td>
+                            <td><i class="fas fa-edit"></i><i class="far fa-trash-alt"></i></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Zapiekanka z ziemniakami i brukselką</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consectetur
+                                consequuntur deleniti eius expedita fugiat hic incidunt laudantium nihil nulla placeat
+                                quibusdam quisquam quod recusandae rem repellat vel veniam, voluptas.</td>
+                            <td><i class="fas fa-edit"></i><i class="far fa-trash-alt"></i></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
+    <div class="add_recipe_modal">
+        <div class="add_top">
+            <h3>Nowy Przepis</h3>
+            <button id="exit_recipe_button">Zapisz i zamknij</button>
+        </div>
+        <form>
+            <div>
+                <label for="recipe_name">Nazwa przepisu</label>
+                <input type="text" id="recipe_name" placeholder="np. Zapiekanka z ziemniakami i brukselką.">
+            </div>
+            <div>
+                <label for="recipe_name">Opis przepisu</label>
+                <textarea id="recipe_description"
+                          placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
+            </div>
+        </form>
+        <div class="recipe_two_colls">
+            <div>
+                <h3>Instrukcje</h3>
+                <div class="input_div">
+                    <textarea name="instructions" id="instructions" cols="30" rows="10" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
+                    <i class="fas fa-plus-square" id="add_instructions"></i>
+                </div>
+                <div class="lists">
+                    <ol id="instructions_list">
+                    </ol>
+                </div>
+            </div>
+            <div>
+                <h3>Składniki</h3>
+                <div class="input_div">
+                    <input type="text" id="ingridients" placeholder="Tarty parmezan lub inny ser.">
+                    <i class="fas fa-plus-square" id="add_ingridients"></i>
+                </div>
+                <div class="lists">
+                    <ul id="ingridients_list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </main>
-<script src="./js/app.js"></script>
+<script src="./js/recipe.js"></script>
 
 </body>
 

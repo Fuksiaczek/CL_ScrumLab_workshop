@@ -50,6 +50,9 @@
         width: 95%;
 
         .table-header {
+          width: 100%;
+          height: 100%;
+
           tr {
             border-top: 2px $color-tableIconText*1.4 solid;
             th {
@@ -57,6 +60,21 @@
               padding: 1rem;
               color: $color-navigation;
               font-size: 1.5rem;
+              margin-right: 5rem;
+
+            }
+
+            th:nth-of-type(1) {
+              width: 5%;
+            }
+            th:nth-of-type(2) {
+              width: 25%;
+            }
+            th:nth-of-type(3) {
+              width: 60%;
+            }
+            th:nth-of-type(4) {
+              width: 7%;
             }
           }
         }
@@ -96,7 +114,7 @@
 
       table, th, tr {
         margin: 1rem;
-        padding: 2rem;
+        padding: 5rem;
         font-size: 1rem;
         font-weight: 900;
         text-align: left;

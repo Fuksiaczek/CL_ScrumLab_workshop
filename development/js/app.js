@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return localStorage.savedName;
 
         } else if (nameValue.length === 0 && localStorage.getItem("savedName") != null) {
-            return "Name exists or invalid name"
+            return ("Name exists or invalid name");
         }
     });
 
@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+
     // closing the widgets notifications
 
     const exitFirst = document.querySelector(".exit-first");
@@ -121,71 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
     closeInfoThree();
 
 
-// to show all the recipes (recipe panel)
-
-// DO UZUPEŁNIENIA JAK BĘDZIE NOWY PRZEPIS LOGIKA
-
-    if (localStorage.getItem('recipes') !== undefined && localStorage.getItem('recipes') !== null) { // if recipes in localStorage exist
-
-        const tableBody = document.querySelector('.table-content');
-        const allRecipes = JSON.parse(localStorage.getItem('recipes'));     //localStorage for recipes - 'recipes'
-        const recipeKeys = Object.keys(allRecipes);
-
-        for (let i = 0; i < recipeKeys.length; i++) {
-            const recipeRow = document.createElement('tr');
-            const recipeId = document.createElement('td');
-            const recipeName = document.createElement('td');
-            const recipeDescription = document.createElement('td');
-            const recipeActions = document.createElement('td');
-            const buttons = document.createElement('td');
-            buttons.innerHTML = '<i class="fas fa-edit"></i><i class="far fa-trash-alt"></i>';
-
-            recipeId.innerText = i + 1;
-            recipeName.innerText = recipeKeys[i];
-            recipeDescription.innerText = allRecipes[recipeKeys[i]]["description"];
-
-            // edit button
-            const editButton = document.querySelectorAll(".fa-edit");
-            editButton.addEventListener('click', function () {
-                // function for editing the recipes
-                //
-                //
-                //
-
-            });
-
-            // delete button
-            const deleteButton = document.querySelectorAll(".fa-trash-alt");
-            deleteButton.addEventListener('click', function () {
-
-                // function for deleting the recipes
-                //
-                //
-                //
-
-            });
-
-            recipeRow.appendChild(recipeId);
-            recipeRow.appendChild(recipeName);
-            recipeRow.appendChild(recipeDescription);
-            recipeRow.appendChild(recipeActions);
-            recipeRow.appendChild(buttons);
-            tableBody.appendChild(recipeRow)
-        }
-
-
-        // licznik na pulpicie (Masz już ... przepisów)
-
-        // if (localStorage.getItem('recipes') === undefined){ // no recipes
-        //     const numberOfRecipes = 0;
-        // } else {
-        //     const numberOfRecipes = Object.keys(JSON.parse(localStorage.getItem('recipes'))).length;
-        // }
-        //
-        // const numberOfRecipesWidget = document.querySelector("div.blueWidget").querySelector("span");
-        // numberOfRecipesWidget.innerText = numberOfRecipes;
-
-    }
 });
 
 
