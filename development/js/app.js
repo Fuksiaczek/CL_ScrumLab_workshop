@@ -122,3 +122,106 @@ document.addEventListener("DOMContentLoaded", function () {
     closeInfoThree();
 
 });
+
+// new plan save
+
+const savePlanButton = document.querySelector("#exit_plan_button"); //przycisk zapisz i zamknij
+
+const newWeekPlan = {
+    id: null,
+    weekPlanName: "",
+    weekPlanDescription: "",
+    weekPlanByDay: [],
+};
+
+
+function saveNewWeekPlanToLocalStorage(newObject)
+{
+    let dataFromLocalStorage = [];
+
+    if(localStorage.getItem("weekPlan") != null)
+    {
+        dataFromLocalStorage = JSON.parse(localStorage.getItem("weekPlan"));
+        dataFromLocalStorage.push(newWeekPlan);
+
+        localStorage.setItem("weekPlan", JSON.stringify(dataFromLocalStorage));
+    }
+    else
+    {
+        dataFromLocalStorage.push(newWeekPlan);
+
+        localStorage.setItem("weekPlan", JSON.stringify(dataFromLocalStorage));
+    }
+
+    alert("Plan został dodany do LocalStorage");
+}
+
+
+savePlanButton.addEventListener("click", function (e)
+{
+    e.preventDefault();
+
+    const planName = document.querySelector("#plan_name");
+    const planDescription = document.querySelector("#plan_description");
+    const weekNumber = document.querySelector("#week_number");
+
+    const dishesList = document.querySelectorAll("option"); //lista wybranych opcji z tabeli z posiłkami
+
+    const weekPlanArray = [];  //tablica zawierająca tablice dishArray
+    const dailyDishesArray = [];  //tablica z posiłkami na dany dzień
+
+
+    // for (let i = 0; i < dishesList.length; i+5)
+    // {
+    //     for (let j = i; j < 5; j++)
+    //     {
+    //         dailyDishesArray.push(dishesList[j])
+    //     }
+    //     weekPlanArray.push(dailyDishesArray);
+    // }
+
+    weekPlanArray.push(1); // do testów
+    weekPlanArray.push(2); // do testów
+
+    newWeekPlan.id = weekNumber.value;
+    newWeekPlan.weekPlanName = planName.value;
+    newWeekPlan.weekPlanDescription = planDescription.value;
+    newWeekPlan.weekPlanByDay = weekPlanArray;
+
+    const errors = [];
+
+    if (newWeekPlan.id === null)
+    {
+        errors.push("nie podałeś numeru tygodnia");
+    }
+    else if (JSON.parse(localStorage.getItem("weekPlan")).id === newWeekPlan.id)
+    {
+        errors.push("plan na podany numer tygodnia już istnieje");
+    }
+    else if (weekPlanArray.length < 1)
+    {
+        errors.push("nie wybrałeś żadnych przepisów");
+    }
+    else if (newWeekPlan.weekPlanName === "")
+    {
+        errors.push("nie podałeś nazwy planu");
+    }
+    else if (newWeekPlan.weekPlanDescription === "")
+    {
+        errors.push("nie podałeś opisu do planu");
+    }
+    else
+    {
+        saveNewWeekPlanToLocalStorage(newWeekPlan);
+    }
+
+    if (errors.length > 0)
+    {
+        alert(errors);
+    }
+
+
+
+});
+
+
