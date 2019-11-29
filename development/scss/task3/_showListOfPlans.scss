@@ -1,16 +1,113 @@
-.showListOfPlans {
-  display: none;
+.listPanel {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: $color-background;
-  width: 80%;
-  height: 90%;
+  justify-content: flex-start;
   position: absolute;
   top: 160px;
   left: 220px;
   color: $color-headText;
-  padding: 40px;
-  z-index: 500;
-  overflow: auto;
+  width: 1470px;
+  height: 700px;
+  background-color: $color-background;
+  border: 1px $color-tableIconText dashed;
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    width: 95%;
+    height: 90%;
+    .plansTitle {
+      width: 100%;
+      height: 10%;
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      border-bottom: 2px $color-navigation*2 solid;
+      span {
+        color: $color-headButton;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      .fa-plus-square {
+        font-size: 3rem;
+        color: $color-successText;
+        cursor: pointer;
+      }
+    }
+    .tableScroll {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      table {
+        width: 95%;
+        .planHeader {
+          width: 100%;
+          height: 100%;
+          tr {
+            border-top: 2px $color-tableIconText*1.4 solid;
+            th {
+              border-bottom: 2px $color-tableIconText*1.4 solid;
+              padding: 1rem;
+              color: $color-navigation;
+              font-size: 1.5rem;
+              margin-right: 5rem;
+            }
+            th:nth-of-type(1) {
+              width: 5%;
+            }
+            th:nth-of-type(2) {
+              width: 25%;
+            }
+            th:nth-of-type(3) {
+              width: 60%;
+            }
+            th:nth-of-type(4) {
+              width: 5%;
+            }
+            th:nth-of-type(5) {
+              width: 5%;
+            }
+          }
+        }
+        .planContent {
+          font-weight: 300;
+          td {
+            margin: 1rem;
+            padding: 1rem;
+            color: $color-tableIconText;
+            opacity: .7;
+            font-size: 1.2rem;
+            border-bottom: 2px $color-tableIconText*1.4 solid;
+            vertical-align: top;
+          }
+
+          td:nth-of-type(4) {
+            font-size: 1rem;
+            width: 60%;
+          }
+          .fa-edit {
+            padding-right: 1rem;
+            font-size: 1.5rem;
+            color: $color-warningText;
+            cursor: pointer;
+          }
+          .fa-trash-alt {
+            font-size: 1.5rem;
+            color: $color-binColor;
+            cursor: pointer;
+          }
+        }
+      }
+      table, th, tr {
+        margin: 1rem;
+        padding: 5rem;
+        font-size: 1rem;
+        font-weight: 900;
+        text-align: left;
+        line-height: 1.5rem;
+      }
+    }
+  }
 }

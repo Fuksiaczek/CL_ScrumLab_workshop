@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman|Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e817da4ca7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+<header>
+    <h1>
+        <span id="first">Zaplanuj</span>
+        <span id="second">Jedzonko</span>
+    </h1>
+    <div class="login-name">
+        <p class="name">Imię</p>
+        <i class="far fa-2x fa-user-circle"></i>
+    </div>
+</header>
+<main class="main_app">
+    <aside>
+        <div class="aside-menu">
+            <ul>
+                <li>
+                    <a href="#">Pulpit</a>
+                    <i class="arrow-icon"></i>
+                </li>
+                <li>
+                    <a href="#">Przepisy</a>
+                    <i class="arrow-icon"></i>
+                </li>
+                <li>
+                    <a href="schedules.html">Plany</a>
+                    <i class="arrow-icon"></i>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <div class="listPanel">
+        <div class="listContainer">
+            <div class="plansTitle">
+                <span>Lista przepisów</span>
+                <div id="addList">
+                    <i class="fas fa-plus-square"></i>
+                </div>
+            </div>
+            <div class="tableScroll">
+                <table id="tableLists">
+                    <thead class="planHeader">
+                    <tr>
+                        <th>ID</th>
+                        <th>NAZWA</th>
+                        <th>OPIS</th>
+                        <th>TYDZIEŃ</th>
+                        <th>AKCJE</th>
+                    </tr>
+                    </thead>
+                    <tbody class="planContent">
+                    <tr>
+                        <td>1</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consectetur
+                            consequuntur deleniti eius expedita fugiat hic incidunt laudantium nihil nulla placeat
+                            quibusdam quisquam quod recusandae rem repellat vel veniam, voluptas.</td>
+                        <td>nr tygodnia</td>
+                        <td><i class="fas fa-edit"></i><i class="far fa-trash-alt"></i></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="./js/plans.js"></script>
+</body>
+</html>
