@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
     // closing the widgets notifications
 
     const exitFirst = document.querySelector(".exit-first");
@@ -120,7 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
     closeInfoOne();
     closeInfoTwo();
     closeInfoThree();
-
 
 });
 

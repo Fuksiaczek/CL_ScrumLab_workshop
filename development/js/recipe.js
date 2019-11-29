@@ -22,6 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     checkName();
 
+    nameProfil.addEventListener("click", function () { // when clicking on the name, the local Storage is cleared
+        if (localStorage.getItem("savedName") != null) {
+            localStorage.removeItem("savedName");
+            location.reload();
+        } else {
+            firstPanel.style.display = 'block';
+            location.reload();
+            localStorage.clear();
+        }
+
+    });
+
     // Add recipe button
     const buttonAddRecipe = document.querySelector('.fa-plus-square');
 
