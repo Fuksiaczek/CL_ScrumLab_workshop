@@ -4,12 +4,25 @@ const add_inst_button = document.getElementById('add_instructions');
 const text_instructions = document.getElementById('instructions');
 const instructions_list = document.getElementById('instructions_list');
 add_inst_button.addEventListener('click', function () {
-    if (text_instructions.value === "") { alert("nie podałeś instrukcji") } else {
+    if (text_instructions.value === "") { alert("nie podałeś instrukcji") }
+    if (text_instructions.value.length > 50) {
+        alert("Element Instrukcje nie powinien byc dłuższy niż 50 znaków");}
+    else {
         var li = document.createElement("li");
         let text_value = text_instructions.value;
         li.innerHTML = text_value;
         instructions_list.appendChild(li);
         text_instructions.value = "";
+
+        li.innerHTML = text_value + '<i class="fas fa-edit edit"></i><i class="far fa-trash-alt bin"></i>';
+        instructions_list.appendChild(li);
+        const newBin = li.querySelector('.bin');
+        newBin.addEventListener('click', function(event) {              //edytowanie i usuwanie
+
+            this.parentElement.parentElement.removeChild(this.parentElement);
+
+
+        });
     }
 });
 //add ingridients to list
@@ -17,14 +30,24 @@ const add_ingrid_button = document.getElementById('add_ingridients');
 const text_ingridients = document.getElementById('ingridients');
 const ingridients_list = document.getElementById('ingridients_list');
 add_ingrid_button.addEventListener('click', function () {
-    if (text_ingridients.value === "") { alert("nie podałeś składników") } else {
-        var li_ing = document.createElement("li");
+    if (text_ingridients.value === "") { alert("nie podałeś składników") }
+        if (text_ingridients.value.length > 150) {
+            alert("Element Składniki nie powinien byc dłuższy niż 150 znaków");}
+        else {
+        const li_ing = document.createElement("li");
         let text_value_ing = text_ingridients.value;
-        li_ing.innerHTML = text_value_ing;
+
         ingridients_list.appendChild(li_ing);
         text_ingridients.value = "";
-    }
-});
+
+            li_ing.innerHTML = text_value_ing + '<i class="fas fa-edit edit"></i><i class="far fa-trash-alt bin"></i>';
+            ingridients_list.appendChild(li_ing);
+            const newBin = li_ing.querySelector('.bin');
+            newBin.addEventListener('click', function(event) {              //edytowanie i usuwanie
+
+                this.parentElement.parentElement.removeChild(this.parentElement);
+    })
+}
 //save all
 const saveRecipeButton = document.getElementById('exit_recipe_button');
 const newRecipe = {
@@ -45,7 +68,21 @@ function saveNewRecipeToLocalStorage(newObject) {
         localStorage.setItem("newRecipe", JSON.stringify(recipelocalStorage));
     }
     alert("Przepis został dodany do LocalStorage");
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 saveRecipeButton.addEventListener("click", function (e) {
     e.preventDefault();
     const recipeName = document.getElementById('recipe_name');
@@ -80,11 +117,11 @@ saveRecipeButton.addEventListener("click", function (e) {
         nonValid.push("nie dodałeś składników do przepisu");
     }
     else {
-        saveNewRecipeToLocalStorage(newRecipe);
+        saveNewRecipeToLocalStorage(newRecipe)
     }
     if (nonValid.length > 0) {
         alert(nonValid);
     }
     instructions_list.innerHTML = '';
     ingridients_list.innerHTML = '';
-});
+})})
