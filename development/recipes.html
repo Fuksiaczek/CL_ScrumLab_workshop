@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman|Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e817da4ca7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+
+<header>
+    <h1>
+        <span id="first">Zaplanuj</span>
+        <span id="second">Jedzonko</span>
+    </h1>
+    <div class="login-name">
+        <p class="name">Imię</p>
+        <i class="far fa-2x fa-user-circle"></i>
+    </div>
+</header>
+
+<main class="main_app">
+    <aside>
+        <div class="aside-menu">
+            <ul>
+                <li>
+                    <a href="app.html">Pulpit</a>
+                    <i class="arrow-icon"></i>
+                </li>
+                <li>
+                    <a href="recipes.html">Przepisy</a>
+                    <i class="arrow-icon"></i>
+                </li>
+                <li>
+                    <a href="schedules.html">Plany</a>
+                    <i class="arrow-icon"></i>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="firstvisit_form">
+        <div class="width_limit">
+            <h2>Witaj,</h2>
+            <h3>wygląda na to, że jesteś tutaj pierwszy raz!</h3>
+            <form>
+                <input type="text" name="lastname" placeholder="tutaj wpisz jak masz na imię">
+                <button id="name_button" type="submit" value="Submit">Gotowe!</button>
+            </form>
+            <p>Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :) </p>
+        </div>
+    </div>
+
+    <div class="recipe-panel">
+        <div class="recipe-container">
+            <div class="recipe-list-title">
+                <span>Lista przepisów</span>
+                <div id="add_recipe">
+                    <i class="fas fa-plus-square"></i>
+                </div>
+            </div>
+
+            <div class="table-scroll">
+                <table id="table-recipes">
+                    <thead class="table-header">
+                        <tr>
+                            <th>ID</th>
+                            <th>NAZWA</th>
+                            <th>OPIS</th>
+                            <th>AKCJE</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-content">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="add_recipe_modal">
+        <div class="add_top">
+            <h3>Nowy Przepis</h3>
+            <button id="exit_recipe_button">Zapisz i zamknij</button>
+        </div>
+        <form>
+            <div>
+                <label for="recipe_name">Nazwa przepisu</label>
+                <input type="text" id="recipe_name" placeholder="np. Zapiekanka z ziemniakami i brukselką.">
+            </div>
+            <div>
+                <label for="recipe_name">Opis przepisu</label>
+                <textarea id="recipe_description"
+                          placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
+            </div>
+        </form>
+        <div class="recipe_two_colls">
+            <div>
+                <h3>Instrukcje</h3>
+                <div class="input_div">
+                    <textarea name="instructions" id="instructions" cols="30" rows="10" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
+                    <i class="fas fa-plus-square" id="add_instructions"></i>
+                </div>
+                <div class="lists">
+                    <ol id="instructions_list">
+                    </ol>
+                </div>
+            </div>
+            <div>
+                <h3>Składniki</h3>
+                <div class="input_div">
+                    <input type="text" id="ingridients" placeholder="Tarty parmezan lub inny ser.">
+                    <i class="fas fa-plus-square" id="add_ingridients"></i>
+                </div>
+                <div class="lists">
+                    <ul id="ingridients_list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<script src="./js/recipe.js"></script>
+
+</body>
+
+</html>
