@@ -394,16 +394,16 @@
         <div class="add_recipe_modal">
             <div class="add_top">
                 <h3>Nowy Przepis</h3>
-                <button id="exit_recipe_button">Zapisz i zamknij</button>
+                <button  id="exit_recipe_button">Zapisz i zamknij</button>
             </div>
             <form>
                 <div>
                     <label for="recipe_name">Nazwa przepisu</label>
-                    <input type="text" id="recipe_name" placeholder="np. Zapiekanka z ziemniakami i brukselką.">
+                    <input type="text" id="recipe_name" maxlength="50" placeholder="np. Zapiekanka z ziemniakami i brukselką.">
                 </div>
                 <div>
                     <label for="recipe_name">Opis przepisu</label>
-                    <textarea id="recipe_description"
+                    <textarea id="recipe_description" maxlength="360"
                         placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
                 </div>
             </form>
@@ -411,7 +411,7 @@
                 <div>
                     <h3>Instrukcje</h3>
                     <div class="input_div">
-                        <textarea name="instructions" id="instructions" cols="30" rows="10" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
+                        <textarea name="instructions" id="instructions" maxlength="50" cols="30" rows="10" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
                         <i class="fas fa-plus-square" id="add_instructions"></i>
                     </div>
                     <div class="lists">
@@ -422,7 +422,7 @@
                 <div>
                     <h3>Składniki</h3>
                     <div class="input_div">
-                        <input type="text" id="ingridients" placeholder="Tarty parmezan lub inny ser.">
+                        <input type="text" id="ingridients" maxlength="150" placeholder="Tarty parmezan lub inny ser.">
                         <i class="fas fa-plus-square" id="add_ingridients"></i>
                     </div>
                     <div class="lists">
@@ -434,7 +434,7 @@
         </div>
     </main>
     <script src="./js/app.js"></script>
-
+    <script src="js/add_recipe.js"></script>
 </body>
 
 </html>
