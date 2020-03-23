@@ -44,13 +44,13 @@
                 </ul>
             </div>
         </aside>
-        <div class="firstvisit_form">
-            <div class="width_limit">
+        <div class="first-visit-form">
+            <div class="width-limit">
                 <h2>Witaj,</h2>
                 <h3>wygląda na to, że jesteś tutaj pierwszy raz!</h3>
                 <form>
                     <input type="text" name="lastname" placeholder="tutaj wpisz jak masz na imię">
-                    <button id="name_button" type="submit" value="Submit">Gotowe!</button>
+                    <button id="name-button" type="submit" value="Submit">Gotowe!</button>
                 </form>
                 <p>Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :) </p>
             </div>
@@ -60,11 +60,11 @@
         <div class="main-panel">
             <div class="panel-top">
                 <div class="widgets">
-                    <div id="add_recipe">
+                    <div id="add-recipe">
                         <i class="far fa-plus-square"></i>
                         <h3>dodaj przepis</h3>
                     </div>
-                    <div id="add_plan">
+                    <div id="add-plan">
                         <i class="far fa-plus-square"></i>
                         <h3>dodaj plan</h3>
                     </div>
@@ -87,8 +87,8 @@
                     </div>
                 </div>
             </div>
-            <div class="main-panel-plany">
-                    <div class="width_limit">
+            <div class="main-panel-plans">
+                    <div class="width-limit">
                         <p>Twój plan na <span>{nr_tygodnia}</span> tydzień</p>
                         <div class="table">
                             <table>
@@ -164,29 +164,33 @@
                     </div>
                 </div>
         </div>
-        <div class="add_plan_modal">
-            <div class="add_top">
+        <div class="add-plan-modal">
+            <div class="add-top">
                 <h3>Nowy Plan</h3>
-                <button id="exit_plan_button">Zapisz i zamknij</button>
+                <button id="exit-plan-button">Zapisz i zamknij</button>
             </div>
             <form>
                 <div>
-                    <label for="plan_name">Nazwa planu</label>
-                    <input type="text" id="plan_name" name="plan_name" placeholder="np. Plan jarski na bezmięsny tydzień">
+                    <label for="plan-name">Nazwa planu</label>
+                    <input type="text" id="plan-name" name="plan-name"
+                           placeholder="np. Plan jarski na bezmięsny tydzień">
                 </div>
                 <div>
-                    <label for="plan_name">Opis planu</label>
-                    <textarea id="plan_description" name="plan_description"
-                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
+                    <label for="plan-name">Opis planu</label>
+                    <textarea id="plan-description" name="plan-description"
+                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo.
+                        Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis.">
+                    </textarea>
                 </div>
                 <div>
-                    <label for="week_number">Numer tygodnia</label>
-                    <input type="text" id="week_number" name="week_number" placeholder="4">
+                    <label for="week-number">Numer tygodnia</label>
+                    <input type="text" id="week-number" name="week-number" placeholder="4">
                 </div>
             </form>
             <table>
-                <tr class="meal_type">
-                    <td class="empty_one"></td>
+                <tr class="meal-type">
+                    <td class="empty-one"></td>
                     <td>Śniadanie</td>
                     <td>Drugie Śniadanie</td>
                     <td>Zupa</td>
@@ -391,42 +395,49 @@
                 </tr>
             </table>
         </div>
-        <div class="add_recipe_modal">
-            <div class="add_top">
+        <div class="add-recipe-modal">
+            <div class="add-top">
                 <h3>Nowy Przepis</h3>
-                <button id="exit_recipe_button">Zapisz i zamknij</button>
+                <button id="exit-recipe-button">Zapisz i zamknij</button>
             </div>
             <form>
                 <div>
-                    <label for="recipe_name">Nazwa przepisu</label>
-                    <input type="text" id="recipe_name" placeholder="np. Zapiekanka z ziemniakami i brukselką.">
+                    <label for="recipe-name">Nazwa przepisu</label>
+                    <input type="text" id="recipe-name" placeholder="np. Zapiekanka z ziemniakami i brukselką.">
                 </div>
                 <div>
-                    <label for="recipe_name">Opis przepisu</label>
-                    <textarea id="recipe_description"
-                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
+                    <label for="recipe-name">Opis przepisu</label>
+                    <textarea id="recipe-description"
+                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. M
+                        agni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo.
+                        Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis.">
+                    </textarea>
                 </div>
             </form>
-            <div class="recipe_two_colls">
+            <div class="recipe-two-colls">
                 <div>
                     <h3>Instrukcje</h3>
                     <div class="input_div">
-                        <textarea name="instructions" id="instructions" cols="30" rows="10" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo. Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis."></textarea>
-                        <i class="fas fa-plus-square" id="add_instructions"></i>
+                        <textarea name="instructions" id="instructions" cols="30" rows="10"
+                                  placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                  Magni rem officia repellendus aut eius fugiat nostrum cum? Sit quo ullam nemo.
+                                  Aperiam quisquam, eos animi officiis suscipit aliquid iste perferendis.">
+                        </textarea>
+                        <i class="fas fa-plus-square" id="add-instructions"></i>
                     </div>
                     <div class="lists">
-                        <ol id="instructions_list">
+                        <ol id="instructions-list">
                         </ol>
                     </div>
                 </div>
                 <div>
                     <h3>Składniki</h3>
-                    <div class="input_div">
-                        <input type="text" id="ingridients" placeholder="Tarty parmezan lub inny ser.">
-                        <i class="fas fa-plus-square" id="add_ingridients"></i>
+                    <div class="input-div">
+                        <input type="text" id="ingredients" placeholder="Tarty parmezan lub inny ser.">
+                        <i class="fas fa-plus-square" id="add-ingredients"></i>
                     </div>
                     <div class="lists">
-                        <ul id="ingridients_list">
+                        <ul id="ingredients-list">
                         </ul>
                     </div>
                 </div>

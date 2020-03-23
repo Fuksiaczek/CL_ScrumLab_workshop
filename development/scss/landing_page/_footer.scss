@@ -1,18 +1,17 @@
 footer {
   width: 100%;
   height: 50px;
-  background-color: $color-headText;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: $font-text;
+  font-family: $font-main;
 
   p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: $color-background;
 
     span {
-      color: $color-headButton;
+      color: $color-contrast;
     }
   }
 }

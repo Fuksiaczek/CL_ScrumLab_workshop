@@ -1,36 +1,31 @@
 .three-column-main {
-  background-color: $color-navigation;
+  background-color: $color-semi-dark-text;
   display: flex;
   justify-content: center;
+  padding-bottom: 10px;
 }
 
 .three-columns-content {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  margin-top: 10px;
 }
 
 .three-columns-section {
-  font-family: $font-text;
+  font-family: $font-main;
   color: $color-background;
   padding: 30px 50px;
   flex: 0 1 33.3%;
 
-  .three-columns-title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    font-weight: normal;
-  }
-
   p {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   a {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
     &:link,
     &:visited,
     &:active {
@@ -39,7 +34,7 @@
     }
 
     &:hover {
-      color: lighten(#5B605F, 30%);
+      color: $color-dark-text;
     }
   }
 }
@@ -48,7 +43,7 @@
   padding-bottom: 20px;
 
   input {
-    padding: 5px;
+    padding: 10px;
     font-size: 0.8rem;
     border: none;
   }
@@ -58,25 +53,35 @@
   }
 
   .button {
-    padding: 5px 10px;
+    padding: 10px 20px;
     font-weight: bold;
     color: $color-background;
-    background-color: $color-headButton;
+    background-color: $color-contrast;
     position: absolute;
     cursor: pointer;
+
+    &:hover {
+      background-color: $color-light-text;
+      color: $color-contrast;
+    }
   }
 }
 
 .column-list {
+
   li {
     list-style-type: disc;
-    padding-bottom: 5px;
     list-style-position: inside;
+
+    &:hover {
+      color: $color-dark-text;
+    }
   }
 }
 
 .social-media {
   display: flex;
+
   .fab {
     margin: 30px 20px 30px 5px;
     width: 2rem;

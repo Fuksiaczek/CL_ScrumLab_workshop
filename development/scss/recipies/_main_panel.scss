@@ -8,7 +8,7 @@
   position: absolute;
   top: 160px;
   left: 220px;
-  color: $color-headText;
+  color: $color-dark-text;
   padding: 0;
   overflow: auto;
   .panel-top {
@@ -26,11 +26,11 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      color: $color-successText;
+      color: $color-success;
       div {
         width: 45%;
         height: 80%;
-        border: 1px dashed $color-successText;
+        border: 1px dashed $color-success;
         background-color: $color-background;
         margin: 10px;
         display: flex;
@@ -79,31 +79,31 @@
       }
 
       .info {
-        color: $color-infoText;
-        border: 1px $color-infoText dashed;
+        color: $color-dark-text;
+        border: 1px $color-dark-text dashed;
 
         .fas {
-          background-color: $color-infoText;
-          color: #FFF;
+          background-color: $color-dark-text;
+          color: $color-background;
         }
       }
 
       .warning {
-        color: $color-warningText;
-        border: 1px $color-warningText dashed;
+        color: $color-warning;
+        border: 1px $color-warning dashed;
 
         .fas {
-          background-color: $color-warningText;
+          background-color: $color-warning;
           color: #FFF;
         }
       }
 
       .success  {
-        color: $color-successText;
-        border: 1px $color-successText dashed;
+        color: $color-success;
+        border: 1px $color-success dashed;
 
         .fas {
-          background-color: $color-successText;
+          background-color: $color-success;
           color: #FFF;
         }
       }

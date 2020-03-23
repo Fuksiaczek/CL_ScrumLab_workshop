@@ -6,11 +6,11 @@
   position: absolute;
   top: 160px;
   left: 220px;
-  color: $color-headText;
+  color: $color-dark-text;
   width: 1470px;
   height: 700px;
   background-color: $color-background;
-  border: 1px $color-tableIconText dashed;
+  border: 1px $color-light-text dashed;
 
   .recipe-container {
     display: flex;
@@ -25,10 +25,10 @@
       display: flex;
       justify-content: space-between;
       align-content: center;
-      border-bottom: 2px $color-navigation*2 solid;
+      border-bottom: 2px $color-semi-dark-text solid;
 
       span {
-        color: $color-headButton;
+        color: $color-contrast;
         font-size: 2rem;
         text-transform: uppercase;
         font-weight: bold;
@@ -36,7 +36,7 @@
 
       .fa-plus-square {
         font-size: 3rem;
-        color: $color-successText;
+        color: $color-success;
         cursor: pointer;
       }
     }
@@ -54,11 +54,11 @@
           height: 100%;
 
           tr {
-            border-top: 2px $color-tableIconText*1.4 solid;
+            border-top: 2px $color-light-text solid;
             th {
-              border-bottom: 2px $color-tableIconText*1.4 solid;
+              border-bottom: 2px $color-light-text solid;
               padding: 1rem;
-              color: $color-navigation;
+              color: $color-semi-dark-text;
               font-size: 1.5rem;
               margin-right: 5rem;
 
@@ -85,10 +85,10 @@
           td {
             margin: 1rem;
             padding: 1rem;
-            color: $color-tableIconText;
+            color: $color-dark-text;
             opacity: .7;
             font-size: 1.2rem;
-            border-bottom: 2px $color-tableIconText*1.4 solid;
+            border-bottom: 2px $color-dark-text solid;
             vertical-align: top;
           }
 
@@ -100,13 +100,13 @@
           .fa-edit {
             padding-right: 1rem;
             font-size: 1.5rem;
-            color: $color-warningText;
+            color: $color-warning;
             cursor: pointer;
           }
 
           .fa-trash-alt {
             font-size: 1.5rem;
-            color: $color-binColor;
+            color: $color-bin;
             cursor: pointer;
           }
         }

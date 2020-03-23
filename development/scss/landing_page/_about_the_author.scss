@@ -1,0 +1,36 @@
+.about-the-author {
+  display: flex;
+  width: 100%;
+  height: 450px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $color-background;
+  padding: 0 25px;
+
+  .photo {
+    width: 270px;
+    height: 300px;
+    background: $color-semi-dark-text;
+  }
+
+  .text-about-the-author {
+    height: 300px;
+    width: 60%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: $color-deep-dark;
+    padding-right: 50px;
+
+    h3 {
+      color: $color-dark-text;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}

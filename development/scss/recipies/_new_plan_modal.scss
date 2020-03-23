@@ -1,4 +1,4 @@
-.add_plan_modal {
+.add-plan-modal {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -9,29 +9,30 @@
   position: absolute;
   top: 160px;
   left: 220px;
-  color: $color-headText;
+  color: $color-dark-text;
   padding: 40px;
   z-index: 500;
   overflow: auto;
-  .add_top {
+
+  .add-top {
     width: 95%;
     height: 50px;
     min-height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 2px solid $color-tableIconText;
+    border-bottom: 2px solid $color-light-text;
     h3 {
       font-size: 28px;
-      color: $color-headButton;
+      color: $color-contrast;
       text-transform: uppercase;
     }
     button {
       border-style: none;
       font-size: 16px;
       font-weight: bold;
-      color: #fff;
-      background-color: $color-headButton;
+      color: $color-background;
+      background-color: $color-contrast;
       text-align: center;
       width: 16%;
       height: 90%;
@@ -45,7 +46,7 @@
     width: 100%;
     height: 30%;
     margin: 20px 0 20px 0;
-    color: $color-headText;
+    color: $color-dark-text;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,23 +60,23 @@
         text-align: center;
       }
       input {
-        border: 1.2px solid $color-tableIconText;
-        color: $color-headText;
+        border: 1.2px solid $color-light-text;
+        color: $color-dark-text;
       }
       textarea {
-        color: $color-headText;
+        color: $color-dark-text;
         max-height: 120px;
         max-width: 80%;
-        border: 1px solid $color-tableIconText;
+        border: 1px solid $color-light-text;
       }
-      #plan_name {
+      #plan-name {
         width: 80.5%;
       }
-      #plan_description {
+      #plan-description {
         width: 80%;
         height: 100px;
       }
-      #week_number {
+      #week-number {
         width: 30px;
         margin-left: 26px;
         text-align: center;
@@ -95,8 +96,8 @@
       align-items: center;
       tr{
           td{
-            border-bottom: 1px solid $color-tableIconText;
-            border-top: 1px solid $color-tableIconText;
+            border-bottom: 1px solid $color-light-text;
+            border-top: 1px solid $color-light-text;
             width: 200px;
             text-align: center;
             padding:10px;
@@ -110,10 +111,11 @@
             font-weight: bold;
           }
       }
-      .meal_type{
+      .meal-type{
           font-size: 18px;
           text-transform: uppercase;
           font-weight: bold;
+
           td:first-of-type {
               border-top: none;
           }

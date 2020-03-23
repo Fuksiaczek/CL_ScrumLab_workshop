@@ -10,8 +10,6 @@
   height: inherit;
   width: 100%;
   background-color: $color-background;
-  border-bottom: 1px solid $color-headText;
-  border-top: 1px solid $color-headText;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,17 +27,22 @@
   }
 
   .slide-text {
-    width: 70%;
+    width: 60%;
+    color: $color-deep-dark;
 
-    span {
+    h3 {
+      font-size: 2.2rem;
+    }
+
+    p{
       font-size: 1.5rem;
-      display: block;
-      padding-bottom: 10px;
+      line-height: 2rem;
     }
   }
 }
 
 .carousel {
+
   ul {
     height: inherit;
     width: 100%;
@@ -65,5 +68,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
+  color: $color-deep-dark;
 }
 

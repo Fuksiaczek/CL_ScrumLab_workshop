@@ -1,11 +1,11 @@
-.main-panel-plany {
+.main-panel-plans {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  border: 1px dashed $color-tableIconText;
+  border: 1px dashed $color-light-text;
   background-color: $color-background;
-  color: $color-headText;
+  color: $color-dark-text;
   width: 100%;
   height: 65%;
 
@@ -15,13 +15,13 @@
   p {
     font-size: 1rem;
     font-weight: 700;
-    color: $color-headButton;
+    color: $color-contrast;
     text-align: center;
     line-height: 3rem;
   }
 
   table {
-    color: $color-headText;
+    color: $color-dark-text;
 
     td,
     th {
@@ -33,20 +33,20 @@
     th {
       font-weight: 700;
       text-align: start;
-      color: $color-headText;
-      border-top: 1px solid $color-tableIconText;
-      border-bottom: 1px solid $color-tableIconText;
+      color: $color-dark-text;
+      border-top: 1px solid $color-light-text;
+      border-bottom: 1px solid $color-light-text;
     }
 
     td {
-      color: $color-tableIconText;
+      color: $color-light-text;
       font-size: 0.8rem;
       padding-right: 45px;
       line-height: 1.4;
     }
 
     tr {
-      border-bottom: 1px solid $color-tableIconText;
+      border-bottom: 1px solid $color-light-text;
     }
   }
 
@@ -58,7 +58,8 @@
     font-size: 0.8rem;
 
     a {
-      color: $color-headButton;
+      color: $color-contrast;
+
       span {
         padding: 0 5px;
       }

@@ -1,0 +1,47 @@
+.columns {
+  width: 100%;
+  background-color: $color-dark-text;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.about-application {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  background-color: $color-background;
+
+  article {
+    font-family: $font-main;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 50px 40px;
+    color: $color-dark-text;
+
+    i{
+      text-align: center;
+      padding-bottom: 10px;
+      color: $color-light-text;
+    }
+
+    h3 {
+      max-width: 100%;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 2rem;
+    }
+
+
+  }
+
+
+}

@@ -4,8 +4,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: $color-navigation;
+  background-color: $color-semi-dark-text;
   position: relative;
+
   ul {
     padding: 0;
     width: 100%;
@@ -26,11 +27,11 @@
   position: absolute;
   top: 35%;
   left: 85%;
-  color: $color-headButton; //zmienna
+  color: $color-contrast;
 }
 
 .border-left {
-  border-left: 3px solid $color-headButton; //zmienna
+  border-left: 3px solid $color-contrast;
   font-weight: bold;
 }
 
@@ -42,7 +43,7 @@
   align-items: center;
 
   i {
-    color: $color-headButton;
+    color: $color-contrast;
   }
 
   p {
@@ -51,7 +52,7 @@
   }
 }
 
-.main_app {
+.main-app {
   background-image: url("../../images/background-image.png");
   background-position: center;
   background-size: contain;

@@ -1,17 +1,19 @@
 html {
-  font-size: 14px; // wielkość bazowa
-  font-family: $font-text;
+  font-size: 14px; //basic
+  font-family: $font-main;
 }
 
 body {
   width: 100%;
-  font-family: $font-text;
-  background-color: $color-headText;
+  font-family: $font-main;
+  background-color: $color-dark-text;
 }
 
 
 h3 {
-  font-size: 1.3rem;
+  font-size: 2.2rem;
+  font-weight: 400;
+  padding: 15px 0;
 }
 
 .container {

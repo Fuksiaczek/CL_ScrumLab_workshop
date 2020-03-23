@@ -1,4 +1,4 @@
-.add_recipe_modal {
+.add-recipe-modal {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -9,21 +9,21 @@
   position: absolute;
   top: 160px;
   left: 220px;
-  color: $color-headText;
+  color: $color-dark-text;
   padding: 40px;
   z-index: 500;
   overflow: auto;
-  .add_top {
+  .add-top {
     width: 95%;
     height: 50px;
     min-height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 2px solid $color-tableIconText;
+    border-bottom: 2px solid $color-light-text;
     h3 {
       font-size: 28px;
-      color: $color-headButton;
+      color: $color-contrast;
       text-transform: uppercase;
     }
     button {
@@ -31,7 +31,7 @@
       font-size: 16px;
       font-weight: bold;
       color: #fff;
-      background-color: $color-headButton;
+      background-color: $color-contrast;
       text-align: center;
       width: 16%;
       height: 90%;
@@ -45,7 +45,7 @@
     width: 100%;
     height: 30%;
     margin: 20px 0 20px 0;
-    color: $color-headText;
+    color: $color-dark-text;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,32 +59,32 @@
         text-align: center;
       }
       input {
-        border: 1.2px solid $color-tableIconText;
-        color: $color-headText;
+        border: 1.2px solid $color-light-text;
+        color: $color-light-text;
       }
       textarea {
-        color: $color-headText;
+        color: $color-dark-text;
         max-height: 120px;
         max-width: 80%;
-        border: 1px solid $color-tableIconText;
+        border: 1px solid $color-light-text;
       }
-      #recipe_name {
+      #recipe-name {
         width: 80.5%;
       }
-      #recipe_description {
+      #recipe-description {
         width: 80%;
         height: 100px;
       }
     }
   }
-  .recipe_two_colls {
+  .recipe-two-colls {
     width: 100%;
     height: 500px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    align-items: center;
+
     div {
       width: 50%;
       height: 100%;
@@ -92,13 +92,13 @@
       flex-direction: column;
       justify-content: center;
       font-size: 22px;
-      color: $color-headText;
+      color: $color-dark-text;
       padding: 14px;
       h3 {
         font-size: 22px;
         text-transform: uppercase;
         margin-bottom: 5px;
-        border-bottom: 2px solid $color-tableIconText;
+        border-bottom: 2px solid $color-light-text;
         padding: 5px;
       }
       .input_div {
@@ -110,19 +110,19 @@
           width: 90%;
           max-width: 90%;
           height: 100px;
-          border: 1px solid $color-tableIconText;
+          border: 1px solid $color-light-text;
           margin-right: 6px;
         }
         input {
           height: 30px;
           width: 94%;
-          border: 1px solid $color-tableIconText;
-          color: $color-headText;
+          border: 1px solid $color-light-text;
+          color: $color-dark-text;
           margin-right: 6px;
         }
         i{
             font-size: 28px;
-            color: $color-successText;
+            color: $color-success;
         }
       }
     }
