@@ -10,6 +10,26 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
+
+  .column-list
+  {
+    ul{
+      a:hover
+      {
+        color: $color-dark-text;
+      }
+    }
+
+  }
+
+  .social-media
+  {
+    i:hover {
+      color: $color-dark-text;
+    }
+  }
+
+
 }
 
 .three-columns-section {
@@ -33,10 +53,10 @@
       text-decoration: none;
     }
 
-    &:hover {
-      color: $color-dark-text;
-    }
   }
+
+
+
 }
 
 .third-section {

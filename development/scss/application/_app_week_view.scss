@@ -1,68 +1,80 @@
 .main-panel-plans {
+
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  border: 1px dashed $color-light-text;
-  background-color: $color-background;
-  color: $color-dark-text;
-  width: 100%;
-  height: 65%;
+  align-items: flex-start;
+  justify-content: center;
+  width: calc(100vw - 200px);
+  height: 60%;
+  justify-self: center;
+  align-self: center;
 
-  .table {
-    padding: 0 30px;
-  }
-  p {
-    font-size: 1rem;
-    font-weight: 700;
-    color: $color-contrast;
-    text-align: center;
-    line-height: 3rem;
-  }
+  .main-panel-plans-box
+  {
+    width: 90%;
+    height: 100%;
+    padding-top: 10px;
+    @include base-app-view;
 
-  table {
-    color: $color-dark-text;
 
-    td,
-    th {
-      padding: 15px 5px;
-      flex-wrap: wrap;
-      border-collapse: collapse;
+    .table {
+      padding: 0 30px;
     }
-
-    th {
+    p {
+      font-size: 1.2rem;
       font-weight: 700;
-      text-align: start;
-      color: $color-dark-text;
-      border-top: 1px solid $color-light-text;
-      border-bottom: 1px solid $color-light-text;
-    }
-
-    td {
-      color: $color-light-text;
-      font-size: 0.8rem;
-      padding-right: 45px;
-      line-height: 1.4;
-    }
-
-    tr {
-      border-bottom: 1px solid $color-light-text;
-    }
-  }
-
-  .navigate-buttons {
-    padding: 30px 10px 0 10px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    font-size: 0.8rem;
-
-    a {
       color: $color-contrast;
+      text-align: center;
+      line-height: 4rem;
+    }
 
-      span {
-        padding: 0 5px;
+    table {
+      color: $color-dark-text;
+
+      td,
+      th {
+        padding: 15px 5px;
+        flex-wrap: wrap;
+        border-collapse: collapse;
+      }
+
+      th {
+        font-weight: 700;
+        text-align: start;
+        color: $color-dark-text;
+        border-top: 1px solid $color-light-text;
+        border-bottom: 1px solid $color-light-text;
+        font-size: 1.2rem;
+      }
+
+      td {
+        color: $color-light-text;
+        font-size: 1rem;
+        padding-right: 30px;
+        line-height: 1.4;
+      }
+
+      tr {
+        border-bottom: 1px solid $color-light-text;
+      }
+    }
+
+    .navigate-buttons {
+      padding: 30px 10px 0 10px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      font-size: 1rem;
+
+      a {
+        color: $color-contrast;
+
+        span {
+          padding: 0 5px;
+        }
       }
     }
   }
+
+
 }
+

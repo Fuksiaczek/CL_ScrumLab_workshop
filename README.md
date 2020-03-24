@@ -16,12 +16,19 @@ Application which helps users plan their meals weekly. This app uses localStorag
 - edit or remove plan or recipe
 - view how many recipes and plans is currently being stored
 
-### Technologies
+### Technologies:
 
-- HTML
-- SASS
+- HTML5
+- Sass
 - JavaScript
 - Gulp
+- jQuery
+- Git branches
+- Node.js
+
+### Landing Page Demo:
+
+![](development/demo/landing_page_demo.gif)
 
 ### Installation:
 
@@ -31,4 +38,6 @@ Application which helps users plan their meals weekly. This app uses localStorag
   `npm install`
 - #### start
   `gulp watch`
+  
+
 

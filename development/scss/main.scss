@@ -1,8 +1,8 @@
-@import "reset";
-@import "colors";
-@import "font";
-@import "base";
-@import "mixin";
+@import "general/reset";
+@import "general/colors";
+@import "general/font";
+@import "general/base";
+@import "general/mixin";
 @import "landing_page/newsletter";
 @import "landing_page/carousel";
 @import "landing_page/header";
@@ -12,7 +12,7 @@
 @import "landing_page/footer";
 @import "landing_page/three_columns";
 @import "application/app_main_view";
-@import "application/app_welcome_form";
+@import "application/app_first_visit_form";
 @import "application/app_week_view";
 @import "recipies/main_panel";
 @import "recipies/new_plan_modal";
