@@ -37,7 +37,7 @@ Application which helps users plan their meals weekly. This app uses localStorag
 - #### install all dependencies
   `npm install`
 - #### start
-  `gulp watch`
+  `npm start`
   
 
 

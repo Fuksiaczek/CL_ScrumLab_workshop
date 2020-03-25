@@ -20,86 +20,151 @@ for (let i = 0; i < $liList.length; i++) {
 
 // saving name
 
-// document.addEventListener("DOMContentLoaded", function () {
-
     const $form = document.querySelector(".first-visit-form");
     const $nameInput = $form.querySelector('input[name="name"]');
     const $nameSubmit = $form.querySelector('button');
     const $nameOutput = document.querySelector('.name');
     const $loginIcon =  document.querySelector(".login-name").querySelector("i");
-    const $defaultNameOutput = $nameOutput.innerHTML;
+    const $defaultNameOutput = "Imię";
     const $firstVisitPanel = document.querySelector('.first-visit');
     const $mainPanel = document.querySelector('.main-panel');
-    const $logOutDiv = document.querySelector(".login-name").querySelector("div");
 
-    console.log(localStorage);
+    const $logOutDiv = document.querySelector(".login-name").querySelector(".logout");
+    const $resetLocalStorage = document.querySelector(".login-name").querySelector(".reset-localStorage");
+
     $logOutDiv.style.display = "none";
+    $resetLocalStorage.style.display = "none";
 
-    function checkName() {
-        if (localStorage.getItem("savedName") != null) { // if the name exists
-            $nameOutput.innerHTML = localStorage.savedName;
+    let indexName = "";
+
+    $nameOutput.addEventListener("mouseenter", function ()
+    {
+        $resetLocalStorage.style.display = "block";
+    });
+    $nameOutput.addEventListener("mouseleave", function ()
+    {
+        $resetLocalStorage.style.display = "none";
+    });
+
+
+console.log(localStorage);
+
+// checking if is "log in"
+
+    function checkName()
+    {
+        if ($nameOutput.innerText.trim() !== $defaultNameOutput.trim() && $nameOutput.innerText.length > 0 ) // if name exists in localStorage
+        {
             $firstVisitPanel.style.display = "none";
             $mainPanel.style.display = "block";
 
-            $loginIcon.addEventListener("mouseenter", function () {
-
+            $loginIcon.addEventListener("mouseenter", function ()
+            {
                 $logOutDiv.style.display = "block";
             });
 
-            $loginIcon.addEventListener("mouseleave", function () {
-
+            $loginIcon.addEventListener("mouseleave", function ()
+            {
                 $logOutDiv.style.display = "none";
             });
 
+            console.log("if1");
+        }
 
-        } else { // if the name doesn't exist
-            $nameOutput.innerHTML = $defaultNameOutput;
-            $firstVisitPanel.style.visibility = 'block';
+        if($nameOutput.innerText.trim() === $defaultNameOutput.trim() || $nameOutput.innerText.length === 0 ) // if name doesn't exist in local Storage
+        {
+            $firstVisitPanel.style.display = 'flex';
             $mainPanel.style.display = "none";
             $logOutDiv.style.display = "none";
+            indexName = "";
+            console.log("if2");
+
         }
     }
 
-
-
     checkName();
 
-    $nameSubmit.addEventListener('click', function storeName() {
 
-        let nameValue = $nameInput.value; // wartość inputa (Imię)
+// checking if name exist in local Storage and "login"/"register"
 
-        if (nameValue.length > 0) {
-            localStorage.setItem("savedName", nameValue);
-            return localStorage.savedName;
+    $nameSubmit.addEventListener('click', function storeName(e) {
+        e.preventDefault();
 
-        } else if (nameValue.length === 0 && localStorage.getItem("savedName") != null) {
-            return ("Name already exists or invalid name");
+        let users = JSON.parse(localStorage.getItem("users"));
+        let savedName = "";
+
+        if(localStorage.length !== 0)
+        {
+            console.log(users);
+            console.log(users.length);
+
+            for (let i = 0; i < users.length ; i++)
+            {
+                if (users[i].name.trim() === $nameInput.value.trim() ) // if name exists in localStorage
+                {
+                    savedName = users[i].name;
+                    console.log(users[i].name);
+                    indexName = i;
+                }
+            }
+
+            if (savedName) // if name exists in localStorage
+            {
+                $nameOutput.innerHTML = savedName;
+            }
+
+            else // if name doesn't exist in local Storage
+            {
+                $nameOutput.innerHTML = $nameInput.value;
+
+                let freeSpace = "";
+
+                for (let i = 0; i < users.length; i++) {
+
+                    if(users[i].name === null)
+                    {
+                        freeSpace = i;
+                    }
+                }
+
+                if(freeSpace)
+                {
+                    users[freeSpace] = {};
+                    users[freeSpace].name = $nameInput.value;
+                    indexName = freeSpace;
+                }
+                else
+                {
+                    users[users.length] = {};
+                    users[users.length -1].name = $nameInput.value;
+                    indexName = users.length;
+                }
+
+            }
+
         }
+        else
+        {
+            users = [];
+            users[0] = {};
+            users[0].name = $nameInput.value;
+            $nameOutput.innerHTML = $nameInput.value;
+            console.log(users[0].name);
+            indexName = 0;
+        }
+
+
+        localStorage.setItem("users", JSON.stringify(users));
+        console.log(localStorage);
+
+        $nameInput.value = "";
 
         checkName();
     });
-
-    $nameOutput.addEventListener("click", function () { // when clicking on the name, the local Storage is cleared
-        if (localStorage.getItem("savedName") != null) {
-            localStorage.removeItem("savedName");
-            location.reload();
-        } else {
-            $firstVisitPanel.style.display = 'block';
-            location.reload();
-            localStorage.clear();
-        }
-
-        checkName();
-
-    });
-
-
-
-    //first visit
-
 
 
     // add_recipe & add_plan widgets
+
 
     document.getElementById('add-recipe').addEventListener('click', function(){
         document.querySelector('.add-recipe-modal').style.display = 'flex';
@@ -152,11 +217,11 @@ for (let i = 0; i < $liList.length; i++) {
     const $recipeName = document.getElementById('recipe-name');
     const $recipeDescription = document.getElementById('recipe-description');
 
-    const $recipeIngredientsTextarea = document.getElementById('ingredients');
+    const $recipeIngredientsText = document.getElementById('ingredients');
     const $recipeIngredientsButton = document.getElementById('add-ingredients');
     const $recipeIngredientsList = document.getElementById('ingredients-list');
 
-    const $recipeInstructionsTextarea = document.getElementById('instructions');
+    const $recipeInstructionsText = document.getElementById('instructions');
     const $recipeInstructionsButton = document.getElementById('add-instructions');
     const $recipeInstructionsList = document.getElementById('instructions-list');
 
@@ -190,10 +255,10 @@ for (let i = 0; i < $liList.length; i++) {
     $recipeIngredientsButton.addEventListener("click", function (e) {
         e.preventDefault();
 
-        newRecipe.ingredients.push($recipeIngredientsTextarea.value);
-        addIngredient($recipeIngredientsTextarea.value);
+        newRecipe.ingredients.push($recipeIngredientsText.value);
+        addIngredient($recipeIngredientsText.value);
 
-        $recipeIngredientsTextarea.value = "";
+        $recipeIngredientsText.value = "";
     });
 
 
@@ -215,10 +280,10 @@ for (let i = 0; i < $liList.length; i++) {
     $recipeInstructionsButton.addEventListener("click", function (e) {
         e.preventDefault();
 
-        newRecipe.instructions.push($recipeInstructionsTextarea.value);
-        addInstruction($recipeInstructionsTextarea.value);
+        newRecipe.instructions.push($recipeInstructionsText.value);
+        addInstruction($recipeInstructionsText.value);
 
-        $recipeInstructionsTextarea.value = "";
+        $recipeInstructionsText.value = "";
     });
 
     // saving the recipes
@@ -243,7 +308,9 @@ for (let i = 0; i < $liList.length; i++) {
 // saving recipes to local storage
 
     function saveRecipeToLocalStorage(newObject) {
+
         let dataFromLocalStorage = [];
+
         if (localStorage.getItem("recipes") != null) {
             dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
             newObject.id = JSON.parse(localStorage.getItem("recipes")).length + 1;
@@ -296,17 +363,43 @@ for (let i = 0; i < $liList.length; i++) {
 
     // cleaning the localStorage
 
-    $loginIcon.addEventListener("click", function () { // when clicking on the name, the local Storage is cleared
-        if (localStorage.getItem("savedName") != null) {
+    $nameOutput.addEventListener("click", function () { // when clicking on the name, the local Storage is cleared
+
+        if (localStorage.getItem("savedName") != null)
+        {
             localStorage.removeItem("savedName");
             location.reload();
             localStorage.clear();
             $allRecipesContainer.innerHTML = "";
-        } else {
+        }
+        else
+        {
             $firstVisitPanel.style.display = 'block';
             location.reload();
             localStorage.clear();
         }
+
+        checkName();
+
+    });
+
+    // "log out"
+
+    $loginIcon.addEventListener("click", function () { // when clicking on the name, the local Storage is cleared
+
+        $nameOutput.innerHTML = $defaultNameOutput;
+
+        for (let i = 0; i < $liList.length; i++) {
+            $liList[i].querySelector("i").classList.remove("fas");
+            $liList[i].querySelector("i").classList.remove("fa-chevron-right");
+            $liList[i].querySelector("a").classList.remove("border-left");
+        }
+
+        $liList[0].querySelector("i").classList.add("fas");
+        $liList[0].querySelector("i").classList.add("fa-chevron-right");
+        $liList[0].querySelector("a").classList.add("border-left");
+
+        checkName();
 
     });
 
