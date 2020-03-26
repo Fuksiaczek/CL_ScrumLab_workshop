@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function ()
     let currentNameIndex;
 
     function checkingCurrentIndex() {
-        if(localStorage.getItem("currentNameIndex"))
+        if(localStorage.getItem("currentNameIndex") !== null)
         {
             currentNameIndex = localStorage.getItem("currentNameIndex");
         }
@@ -194,32 +194,37 @@ document.addEventListener("DOMContentLoaded", function ()
     function renderAllRecipes()
     {
         let users = JSON.parse(localStorage.getItem("users"));
-        const $allRecipes = users[currentNameIndex].recipes;
 
-        $allRecipes.forEach(function (singleRecipe)
+        if(parseInt(currentNameIndex) !== -1 && typeof(users[currentNameIndex].recipes) !== "undefined")
         {
-            const $recipeRow = document.createElement('tr');
+            const $allRecipes = users[currentNameIndex].recipes;
 
-            const $recipeId = document.createElement('td');
-            $recipeId.innerText = singleRecipe.id;
+            $allRecipes.forEach(function (singleRecipe)
+            {
+                const $recipeRow = document.createElement('tr');
 
-            const $recipeName = document.createElement('td');
-            $recipeName.innerText = singleRecipe.title;
+                const $recipeId = document.createElement('td');
+                $recipeId.innerText = singleRecipe.id;
 
-            const $recipeDescription = document.createElement('td');
-            $recipeDescription.innerText = singleRecipe.description;
+                const $recipeName = document.createElement('td');
+                $recipeName.innerText = singleRecipe.title;
 
-            const $buttons = document.createElement('td');
-            $buttons.innerHTML = `<i class="fas fa-edit"></i>
+                const $recipeDescription = document.createElement('td');
+                $recipeDescription.innerText = singleRecipe.description;
+
+                const $buttons = document.createElement('td');
+                $buttons.innerHTML = `<i class="fas fa-edit"></i>
                                   <i class="far fa-trash-alt"></i>`;
 
-            $allRecipesContainer.appendChild($recipeRow);
-            $recipeRow.appendChild($recipeId);
-            $recipeRow.appendChild($recipeName);
-            $recipeRow.appendChild($recipeDescription);
-            $recipeRow.appendChild($buttons);
+                $allRecipesContainer.appendChild($recipeRow);
+                $recipeRow.appendChild($recipeId);
+                $recipeRow.appendChild($recipeName);
+                $recipeRow.appendChild($recipeDescription);
+                $recipeRow.appendChild($buttons);
 
-        });
+            });
+        }
+
     }
 
     renderAllRecipes();
@@ -237,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function ()
         }
         else
         {
-            $firstVisitPanel.style.display = 'block';
+            //$firstVisitPanel.style.display = 'block';
             location.reload();
             localStorage.clear();
         }

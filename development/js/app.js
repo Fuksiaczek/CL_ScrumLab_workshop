@@ -41,7 +41,7 @@ for (let i = 0; i < $liList.length; i++) {
     let currentNameIndex;
 
     function checkingCurrentIndex() {
-        if(localStorage.getItem("currentNameIndex"))
+        if(localStorage.getItem("currentNameIndex") !== null)
         {
             currentNameIndex = localStorage.getItem("currentNameIndex");
         }
@@ -56,7 +56,7 @@ for (let i = 0; i < $liList.length; i++) {
         checkingCurrentIndex();
         if(currentNameIndex >= 0)
         {
-            let users = JSON.parse(localStorage.getItem("users"));
+            const users = JSON.parse(localStorage.getItem("users"));
             $nameOutput.innerText = users[currentNameIndex].name;
         }
         notificationCounter();
@@ -117,14 +117,13 @@ console.log(localStorage);
         let users = JSON.parse(localStorage.getItem("users"));
         let savedName = "";
 
-        if(localStorage.length !== 0)
+        if(parseInt(localStorage.length) !== 1)
         {
             for (let i = 0; i < users.length ; i++)
             {
                 if (users[i].name.trim() === $nameInput.value.trim() ) // if name exists in localStorage
                 {
                     savedName = users[i].name;
-                    console.log(users[i].name);
                     currentNameIndex = i;
                 }
             }
@@ -158,7 +157,7 @@ console.log(localStorage);
                 {
                     users[users.length] = {};
                     users[users.length -1].name = $nameInput.value;
-                    currentNameIndex = users.length;
+                    currentNameIndex = (users.length -1);
                 }
             }
         }
@@ -168,7 +167,6 @@ console.log(localStorage);
             users[0] = {};
             users[0].name = $nameInput.value;
             $nameOutput.innerHTML = $nameInput.value;
-            console.log(users[0].name);
             currentNameIndex = 0;
         }
 
@@ -324,9 +322,6 @@ console.log(localStorage);
 
     });
 
-    $savingButton.addEventListener("click", renderAllRecipes);
-
-
 // saving recipes to local storage
 
     function saveRecipeToLocalStorage(newObject)
@@ -356,35 +351,6 @@ console.log(localStorage);
         $recipeIngredientsList.innerHTML = '';
         $recipeDescription.value = '';
         $recipeName.value = '';
-    }
-
-// recipe list
-
-    function renderAllRecipes(e) {
-        e.preventDefault();
-
-        const $allRecipes = JSON.parse(localStorage.getItem('recipes'));
-        const $recipeRow = document.createElement('tr');
-
-        $allRecipes.forEach(function (singleRecipe) {
-            const $recipeId = document.createElement('td');
-            $recipeId.innerText = singleRecipe.id;
-            const $recipeName = document.createElement('td');
-            $recipeName.innerText = singleRecipe.title;
-            const $recipeDescription = document.createElement('td');
-            $recipeDescription.innerText = singleRecipe.description;
-            const $buttons = document.createElement('td');
-
-            $buttons.innerHTML = `<i class="fas fa-edit"></i>
-                                  <i class="far fa-trash-alt"></i>`;
-
-            $allRecipesContainer.appendChild($recipeRow);
-            $recipeRow.appendChild($recipeId);
-            $recipeRow.appendChild($recipeName);
-            $recipeRow.appendChild($recipeDescription);
-            $recipeRow.appendChild($buttons);
-
-        });
     }
 
 // cleaning the localStorage
@@ -433,14 +399,14 @@ console.log(localStorage);
 
     function notificationCounter()
     {
-        if (currentNameIndex !== -1)
+        if (parseInt(currentNameIndex) !== -1)
         {
             checkName();
-            let users = JSON.parse(localStorage.getItem("users"));
 
+            let users = JSON.parse(localStorage.getItem("users"));
             const $recipeCounterText = document.querySelector('.notification-counter');
 
-            if (users[currentNameIndex].recipes === undefined) {
+            if (typeof(users[currentNameIndex].recipes) === "undefined") {
                 $recipeCounterText.innerText = "Nie masz jeszcze żandych przepisów";
             }
             else if (users[currentNameIndex].recipes.length === 1)
