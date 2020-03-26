@@ -30,6 +30,24 @@ Application which helps users plan their meals weekly. This app uses localStorag
 
 ![](development/demo/landing_page_demo.gif)
 
+### Screen view:
+
+- first visit form:
+
+![first visit form](development/demo/screen_views/first_visit_form.png)
+
+- app main view:
+
+![app main viwe](development/demo/screen_views/app_main_view.png)
+
+- adding new recipe:
+
+![adding new recipe](development/demo/screen_views/adding_new_recipe.png)
+
+- recipes review:
+
+![recipes review](development/demo/screen_views/recipes_review.png)
+
 ### Installation:
 
 - #### clone the repository

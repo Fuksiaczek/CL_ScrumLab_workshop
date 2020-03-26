@@ -260,14 +260,18 @@ console.log(localStorage);
 
     function addIngredient(ingredient) {
         const $newLi = document.createElement("li");
-        const $buttons = `<button type="button" class="edit-ingredients">
-                            <i class="far fa-edit"></i></i> 
-                          </button>
-                          <button type="button" class="remove-ingredients">
-                            <i class="far fa-trash-alt"></i> 
-                          </button>`;
+        const $buttons = `<div class="action-btns">
+                            <button type="button" class="edit-ingredients action-btn">
+                                <i class="far fa-edit"></i></i> 
+                            </button>
+                            <button type="button" class="remove-ingredients action-btn">
+                                 <i class="far fa-trash-alt"></i> 
+                            </button>
+                           </div>`;
 
-        $newLi.innerHTML = ingredient + $buttons;
+        let $ingredient = `<div class="ingredient-content-text">${ingredient}</div>`;
+
+        $newLi.innerHTML = `<div class="ingredients-content">${$ingredient} ${$buttons}</div>`;
 
         $recipeIngredientsList.appendChild($newLi);
     }
@@ -286,14 +290,18 @@ console.log(localStorage);
 
     function addInstruction(instruction) {
         const $newLi = document.createElement("li");
-        const $buttons = `<button type="button" class="edit-instructions">
-                            <i class="far fa-edit"></i>
-                          </button>
-                          <button type="button" class="remove-instructions">
-                            <i class="far fa-trash-alt"></i>
-                          </button>`;
+        const $buttons = `<div class="action-btns">
+                            <button type="button" class="edit-instructions action-btn">
+                                <i class="far fa-edit"></i></i> 
+                            </button>
+                            <button type="button" class="remove-instructions action-btn">
+                                 <i class="far fa-trash-alt"></i> 
+                            </button>
+                           </div>`;
 
-        $newLi.innerHTML = instruction + $buttons;
+        let $instruction = `<div class="instruction-content-text">${instruction}</div>`;
+
+        $newLi.innerHTML = `<div class="instructions-content">${$instruction} ${$buttons}</div>`;
         $recipeInstructionsList.appendChild($newLi);
     }
 

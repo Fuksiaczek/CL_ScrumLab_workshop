@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function ()
                             <i class="far fa-trash-alt"></i>
                           </button>`;
 
-        $newLi.innerHTML = instruction + $buttons;
+        $newLi.innerHTML = `<div class="instructions-content"> {instruction + $buttons} </div>`;
         $recipeInstructionsList.appendChild($newLi);
     }
 
@@ -156,39 +156,6 @@ document.addEventListener("DOMContentLoaded", function ()
 
     });
 
-    $savingButton.addEventListener("click", renderAllRecipes);
-
-// saving recipes to local storage
-
-    function saveRecipeToLocalStorage(newObject)
-    {
-        let users = JSON.parse(localStorage.getItem("users"));
-
-        if (users[currentNameIndex].recipes !== undefined) {
-            newObject.id = users[currentNameIndex].recipes.length + 1;
-            users[currentNameIndex].recipes.push(newObject);
-        }
-        else
-        {
-            newObject.id = 1;
-            users[currentNameIndex].recipes = [];
-            users[currentNameIndex].recipes.push(newObject);
-        }
-
-        localStorage.setItem("users", JSON.stringify(users));
-
-        alert("Przepis zapisany");
-        clearNewRecipeData();
-    }
-
-    function clearNewRecipeData()
-    {
-        $recipeInstructionsList.innerHTML = '';
-        $recipeIngredientsList.innerHTML = '';
-        $recipeDescription.value = '';
-        $recipeName.value = '';
-    }
-
 // recipe list
 
     function renderAllRecipes()
@@ -214,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function ()
 
                 const $buttons = document.createElement('td');
                 $buttons.innerHTML = `<i class="fas fa-edit"></i>
-                                  <i class="far fa-trash-alt"></i>`;
+                                      <i class="far fa-trash-alt"></i>`;
 
                 $allRecipesContainer.appendChild($recipeRow);
                 $recipeRow.appendChild($recipeId);
