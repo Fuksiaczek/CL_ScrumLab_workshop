@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", function ()
+{
+
 // main app view aside menu
 
 const $liList = document.querySelectorAll(".aside-menu li");
@@ -35,7 +38,32 @@ for (let i = 0; i < $liList.length; i++) {
     $logOutDiv.style.display = "none";
     $resetLocalStorage.style.display = "none";
 
-    let indexName = "";
+    let currentNameIndex;
+
+    function checkingCurrentIndex() {
+        if(localStorage.getItem("currentNameIndex"))
+        {
+            currentNameIndex = localStorage.getItem("currentNameIndex");
+        }
+        else
+        {
+            currentNameIndex = -1
+        }
+    }
+
+    function setName() {
+
+        checkingCurrentIndex();
+        if(currentNameIndex >= 0)
+        {
+            let users = JSON.parse(localStorage.getItem("users"));
+            $nameOutput.innerText = users[currentNameIndex].name;
+        }
+        notificationCounter();
+    }
+
+    setName();
+
 
     $nameOutput.addEventListener("mouseenter", function ()
     {
@@ -53,7 +81,7 @@ console.log(localStorage);
 
     function checkName()
     {
-        if ($nameOutput.innerText.trim() !== $defaultNameOutput.trim() && $nameOutput.innerText.length > 0 ) // if name exists in localStorage
+        if ($nameOutput.innerText.trim() !== $defaultNameOutput.trim() && $nameOutput.innerText.length > 0 && currentNameIndex !== -1) // if name exists in localStorage
         {
             $firstVisitPanel.style.display = "none";
             $mainPanel.style.display = "block";
@@ -67,18 +95,14 @@ console.log(localStorage);
             {
                 $logOutDiv.style.display = "none";
             });
-
-            console.log("if1");
         }
-
-        if($nameOutput.innerText.trim() === $defaultNameOutput.trim() || $nameOutput.innerText.length === 0 ) // if name doesn't exist in local Storage
+        else // if name doesn't exist in local Storage
         {
             $firstVisitPanel.style.display = 'flex';
             $mainPanel.style.display = "none";
             $logOutDiv.style.display = "none";
-            indexName = "";
-            console.log("if2");
-
+            currentNameIndex = -1;
+            localStorage.setItem("currentNameIndex", JSON.stringify(currentNameIndex));
         }
     }
 
@@ -95,16 +119,13 @@ console.log(localStorage);
 
         if(localStorage.length !== 0)
         {
-            console.log(users);
-            console.log(users.length);
-
             for (let i = 0; i < users.length ; i++)
             {
                 if (users[i].name.trim() === $nameInput.value.trim() ) // if name exists in localStorage
                 {
                     savedName = users[i].name;
                     console.log(users[i].name);
-                    indexName = i;
+                    currentNameIndex = i;
                 }
             }
 
@@ -131,17 +152,15 @@ console.log(localStorage);
                 {
                     users[freeSpace] = {};
                     users[freeSpace].name = $nameInput.value;
-                    indexName = freeSpace;
+                    currentNameIndex = freeSpace;
                 }
                 else
                 {
                     users[users.length] = {};
                     users[users.length -1].name = $nameInput.value;
-                    indexName = users.length;
+                    currentNameIndex = users.length;
                 }
-
             }
-
         }
         else
         {
@@ -150,16 +169,19 @@ console.log(localStorage);
             users[0].name = $nameInput.value;
             $nameOutput.innerHTML = $nameInput.value;
             console.log(users[0].name);
-            indexName = 0;
+            currentNameIndex = 0;
         }
 
 
         localStorage.setItem("users", JSON.stringify(users));
-        console.log(localStorage);
 
         $nameInput.value = "";
 
         checkName();
+        notificationCounter();
+
+        localStorage.setItem("currentNameIndex", JSON.stringify(currentNameIndex));
+        return currentNameIndex;
     });
 
 
@@ -298,7 +320,7 @@ console.log(localStorage);
         document.querySelector('.add-recipe-modal').style.display = 'none';
         $mainPanel.style.display = 'flex';
 
-        console.log(newRecipe);
+        notificationCounter();
 
     });
 
@@ -307,25 +329,29 @@ console.log(localStorage);
 
 // saving recipes to local storage
 
-    function saveRecipeToLocalStorage(newObject) {
+    function saveRecipeToLocalStorage(newObject)
+    {
+        let users = JSON.parse(localStorage.getItem("users"));
 
-        let dataFromLocalStorage = [];
-
-        if (localStorage.getItem("recipes") != null) {
-            dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
-            newObject.id = JSON.parse(localStorage.getItem("recipes")).length + 1;
-            dataFromLocalStorage.push(newObject);
-            localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
-        } else {
-            newObject.id = 1;
-            dataFromLocalStorage.push(newObject);
-            localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
+        if (users[currentNameIndex].recipes !== undefined) {
+            newObject.id = users[currentNameIndex].recipes.length + 1;
+            users[currentNameIndex].recipes.push(newObject);
         }
+        else
+        {
+            newObject.id = 1;
+            users[currentNameIndex].recipes = [];
+            users[currentNameIndex].recipes.push(newObject);
+        }
+
+        localStorage.setItem("users", JSON.stringify(users));
+
         alert("Przepis zapisany");
         clearNewRecipeData();
     }
 
-    function clearNewRecipeData() {
+    function clearNewRecipeData()
+    {
         $recipeInstructionsList.innerHTML = '';
         $recipeIngredientsList.innerHTML = '';
         $recipeDescription.value = '';
@@ -361,7 +387,7 @@ console.log(localStorage);
         });
     }
 
-    // cleaning the localStorage
+// cleaning the localStorage
 
     $nameOutput.addEventListener("click", function () { // when clicking on the name, the local Storage is cleared
 
@@ -383,7 +409,7 @@ console.log(localStorage);
 
     });
 
-    // "log out"
+// "log out"
 
     $loginIcon.addEventListener("click", function () { // when clicking on the name, the local Storage is cleared
 
@@ -403,18 +429,34 @@ console.log(localStorage);
 
     });
 
-    /// notification counter (widget)
+/// notification counter (widget)
 
-    const $recipeCounter = document.getElementById('notification-counter');
+    function notificationCounter()
+    {
+        if (currentNameIndex !== -1)
+        {
+            checkName();
+            let users = JSON.parse(localStorage.getItem("users"));
 
-    if (localStorage.getItem("recipes") === undefined) {
-        $recipeCounter.innerText = 0;
-    } else {
-        $recipeCounter.innerText = Object.keys(JSON.parse(localStorage.getItem("recipes"))).length;
+            const $recipeCounterText = document.querySelector('.notification-counter');
+
+            if (users[currentNameIndex].recipes === undefined) {
+                $recipeCounterText.innerText = "Nie masz jeszcze żandych przepisów";
+            }
+            else if (users[currentNameIndex].recipes.length === 1)
+            {
+                $recipeCounterText.innerText = "Na razie masz tylko 1 przepis";
+            }
+            else if (users[currentNameIndex].recipes.length > 1 && users[currentNameIndex].recipes.length < 5)
+            {
+                $recipeCounterText.innerText = `Masz już ${users[currentNameIndex].recipes.length} przepisy`;
+            }
+            else
+            {
+                $recipeCounterText.innerText = `Masz już ${users[currentNameIndex].recipes.length} przepisów, nieźle!`;
+            }
+        }
     }
-
-
-
 
 
 // new plan save
@@ -515,5 +557,4 @@ console.log(localStorage);
         }
     });
 
-
-//});
+});
