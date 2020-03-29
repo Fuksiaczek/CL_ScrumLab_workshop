@@ -269,9 +269,13 @@ console.log(localStorage);
                             </button>
                            </div>`;
 
-        let $ingredient = `<div class="ingredient-content-text">${ingredient}</div>`;
+        let $ingredient = `<div class="ingredient-content-text">
+                                ${ingredient}
+                           </div>`;
 
-        $newLi.innerHTML = `<div class="ingredients-content">${$ingredient} ${$buttons}</div>`;
+        $newLi.innerHTML = `<div class="ingredients-content">
+                                ${$ingredient} ${$buttons}
+                            </div>`;
 
         $recipeIngredientsList.appendChild($newLi);
     }
@@ -283,10 +287,29 @@ console.log(localStorage);
         addIngredient($recipeIngredientsText.value);
 
         $recipeIngredientsText.value = "";
+        removeIngredients();
     });
 
+    // remove instruction
 
-    //add instructions
+    function removeIngredients()
+    {
+        const $ingredientsLiDiv = document.querySelectorAll(".ingredients-content");
+
+        for (let i = 0; i < $ingredientsLiDiv.length; i++)
+        {
+            let $ingredientsRemoveBtn = $ingredientsLiDiv[i].querySelector(".remove-ingredients");
+
+            $ingredientsRemoveBtn.addEventListener("click", function (e)
+            {
+                e.preventDefault();
+                $ingredientsLiDiv[i].parentElement.remove();
+            });
+        }
+    }
+
+
+    //instructions
 
     function addInstruction(instruction) {
         const $newLi = document.createElement("li");
@@ -299,9 +322,14 @@ console.log(localStorage);
                             </button>
                            </div>`;
 
-        let $instruction = `<div class="instruction-content-text">${instruction}</div>`;
+        let $instruction = `<div class="instruction-content-text">
+                                ${instruction}
+                            </div>`;
 
-        $newLi.innerHTML = `<div class="instructions-content">${$instruction} ${$buttons}</div>`;
+        $newLi.innerHTML = `<div class="instructions-content">
+                                ${$instruction} ${$buttons}
+                            </div>`;
+
         $recipeInstructionsList.appendChild($newLi);
     }
 
@@ -312,9 +340,30 @@ console.log(localStorage);
         addInstruction($recipeInstructionsText.value);
 
         $recipeInstructionsText.value = "";
+        removeInstruction();
     });
 
-    // saving the recipes
+// remove instruction
+
+    function removeInstruction()
+    {
+        const $instructionsLiDiv = document.querySelectorAll(".instructions-content");
+
+        for (let i = 0; i < $instructionsLiDiv.length; i++)
+        {
+            let $instructionRemoveBtn = $instructionsLiDiv[i].querySelector(".remove-instructions");
+
+            $instructionRemoveBtn.addEventListener("click", function (e)
+            {
+                e.preventDefault();
+                $instructionsLiDiv[i].parentElement.remove();
+            });
+        }
+    }
+
+
+
+// saving the recipes
 
     $savingButton.addEventListener("click", function (e) {
         e.preventDefault();
