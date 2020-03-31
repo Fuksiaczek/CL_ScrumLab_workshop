@@ -93,68 +93,68 @@ document.addEventListener("DOMContentLoaded", function ()
         ingredients: []
     };
 
-    // ingredients
-
-    function addIngredient(ingredient) {
-        const $newLi = document.createElement("li");
-        const $buttons = `<button type="button" class="edit-ingredients">
-                            <i class="far fa-edit"></i></i> 
-                          </button>
-                          <button type="button" class="remove-ingredients">
-                            <i class="far fa-trash-alt"></i> 
-                          </button>`;
-
-        $newLi.innerHTML = ingredient + $buttons;
-
-        $recipeIngredientsList.appendChild($newLi);
-    }
-
-    $recipeIngredientsButton.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        newRecipe.ingredients.push($recipeIngredientsText.value);
-        addIngredient($recipeIngredientsText.value);
-
-        $recipeIngredientsText.value = "";
-    });
-
-    //add instructions
-
-    function addInstruction(instruction) {
-        const $newLi = document.createElement("li");
-        const $buttons = `<button type="button" class="edit-instructions">
-                            <i class="far fa-edit"></i>
-                          </button>
-                          <button type="button" class="remove-instructions">
-                            <i class="far fa-trash-alt"></i>
-                          </button>`;
-
-        $newLi.innerHTML = `<div class="instructions-content"> {instruction + $buttons} </div>`;
-        $recipeInstructionsList.appendChild($newLi);
-    }
-
-    $recipeInstructionsButton.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        newRecipe.instructions.push($recipeInstructionsText.value);
-        addInstruction($recipeInstructionsText.value);
-
-        $recipeInstructionsText.value = "";
-    });
-
-    // saving the recipes
-
-    $savingButton.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        newRecipe.title = $recipeName.value;
-        newRecipe.description = $recipeDescription.value;
-        saveRecipeToLocalStorage(newRecipe);
-
-        document.querySelector('.add-recipe-modal').style.display = 'none';
-        $mainPanel.style.display = 'flex';
-
-    });
+    // // ingredients
+    //
+    // function addIngredient(ingredient) {
+    //     const $newLi = document.createElement("li");
+    //     const $buttons = `<button type="button" class="edit-ingredients">
+    //                         <i class="far fa-edit"></i></i>
+    //                       </button>
+    //                       <button type="button" class="remove-ingredients">
+    //                         <i class="far fa-trash-alt"></i>
+    //                       </button>`;
+    //
+    //     $newLi.innerHTML = ingredient + $buttons;
+    //
+    //     $recipeIngredientsList.appendChild($newLi);
+    // }
+    //
+    // $recipeIngredientsButton.addEventListener("click", function (e) {
+    //     e.preventDefault();
+    //
+    //     newRecipe.ingredients.push($recipeIngredientsText.value);
+    //     addIngredient($recipeIngredientsText.value);
+    //
+    //     $recipeIngredientsText.value = "";
+    // });
+    //
+    // //add instructions
+    //
+    // function addInstruction(instruction) {
+    //     const $newLi = document.createElement("li");
+    //     const $buttons = `<button type="button" class="edit-instructions">
+    //                         <i class="far fa-edit"></i>
+    //                       </button>
+    //                       <button type="button" class="remove-instructions">
+    //                         <i class="far fa-trash-alt"></i>
+    //                       </button>`;
+    //
+    //     $newLi.innerHTML = `<div class="instructions-content"> {instruction + $buttons} </div>`;
+    //     $recipeInstructionsList.appendChild($newLi);
+    // }
+    //
+    // $recipeInstructionsButton.addEventListener("click", function (e) {
+    //     e.preventDefault();
+    //
+    //     newRecipe.instructions.push($recipeInstructionsText.value);
+    //     addInstruction($recipeInstructionsText.value);
+    //
+    //     $recipeInstructionsText.value = "";
+    // });
+    //
+    // // saving the recipes
+    //
+    // $savingButton.addEventListener("click", function (e) {
+    //     e.preventDefault();
+    //
+    //     newRecipe.title = $recipeName.value;
+    //     newRecipe.description = $recipeDescription.value;
+    //     saveRecipeToLocalStorage(newRecipe);
+    //
+    //     document.querySelector('.add-recipe-modal').style.display = 'none';
+    //     $mainPanel.style.display = 'flex';
+    //
+    // });
 
 // recipe list
 
