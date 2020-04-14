@@ -57,7 +57,9 @@
                 <div class="recipe-list-title">
                     <span>Lista przepisów</span>
                     <div id="add-recipe">
-                        <i class="fas fa-plus-square"></i>
+                        <a href="app.html">
+                            <i class="fas fa-plus-square add-recipe-btn"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -75,49 +77,6 @@
 
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="add-recipe-modal">
-            <div class="add-top">
-                <h3>Nowy Przepis</h3>
-                <button id="exit-recipe-button">Zapisz i zamknij</button>
-            </div>
-            <form>
-                <div>
-                    <label for="recipe-name">Nazwa przepisu</label>
-                    <input type="text" id="recipe-name" placeholder="Zapiekanka z ziemniakami i brukselką.">
-                </div>
-                <div>
-                    <label for="recipe-description">Opis przepisu</label>
-                    <textarea id="recipe-description"
-                              placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit"></textarea>
-                </div>
-            </form>
-            <div class="recipe-two-col">
-                <div>
-                    <label for="instructions">Instrukcje</label>
-                    <div class="input-div">
-                            <textarea name="instructions" id="instructions" cols="30" rows="10"
-                                      placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit"></textarea>
-                        <i class="fas fa-plus-square" id="add-instructions"></i>
-                    </div>
-                    <div class="lists">
-                        <ol id="instructions-list">
-                        </ol>
-                    </div>
-                </div>
-                <div>
-                    <label for="ingredients">Składniki</label>
-                    <div class="input-div">
-                        <input type="text" id="ingredients" placeholder="Tarty parmezan lub inny ser.">
-                        <i class="fas fa-plus-square" id="add-ingredients"></i>
-                    </div>
-                    <div class="lists">
-                        <ul id="ingredients-list">
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

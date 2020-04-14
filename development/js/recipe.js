@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", function ()
 {
-
 // main app view aside menu
 
     const $liList = document.querySelectorAll(".aside-menu li");
 
     for (let i = 0; i < $liList.length; i++) {
-                    $liList[i].querySelector("i").classList.remove("fas");
-                    $liList[i].querySelector("i").classList.remove("fa-chevron-right");
-                    $liList[i].querySelector("a").classList.remove("border-left");
-                }
+        $liList[i].querySelector("i").classList.remove("fas");
+        $liList[i].querySelector("i").classList.remove("fa-chevron-right");
+        $liList[i].querySelector("a").classList.remove("border-left");
+    }
     $liList[1].querySelector("i").classList.add("fas");
     $liList[1].querySelector("i").classList.add("fa-chevron-right");
     $liList[1].querySelector("a").classList.add("border-left");
@@ -64,90 +63,25 @@ document.addEventListener("DOMContentLoaded", function ()
 
     console.log(localStorage);
 
-    const $recipeName = document.getElementById('recipe-name');
-    const $recipeDescription = document.getElementById('recipe-description');
-
-    const $recipeIngredientsText = document.getElementById('ingredients');
-    const $recipeIngredientsButton = document.getElementById('add-ingredients');
-    const $recipeIngredientsList = document.getElementById('ingredients-list');
-
-    const $recipeInstructionsText = document.getElementById('instructions');
-    const $recipeInstructionsButton = document.getElementById('add-instructions');
-    const $recipeInstructionsList = document.getElementById('instructions-list');
-
-    const $savingButton = document.getElementById('exit-recipe-button');
+    // const $recipeName = document.getElementById('recipe-name');
+    // const $recipeDescription = document.getElementById('recipe-description');
+    //
+    // const $recipeIngredientsText = document.getElementById('ingredients');
+    // const $recipeIngredientsButton = document.getElementById('add-ingredients');
+    // const $recipeIngredientsList = document.getElementById('ingredients-list');
+    //
+    // const $recipeInstructionsText = document.getElementById('instructions');
+    // const $recipeInstructionsButton = document.getElementById('add-instructions');
+    // const $recipeInstructionsList = document.getElementById('instructions-list');
+    //
+    // const $savingButton = document.getElementById('exit-recipe-button');
     const $allRecipesContainer = document.querySelector('.table-content');
 
-    const newRecipe = {
-        id: "",
-        title: "",
-        description: "",
-        instructions: [],
-        ingredients: []
-    };
+    document.getElementById('add-recipe').addEventListener('click', function(){
+        let addRecipe = true;
+        localStorage.setItem("addRecipe", JSON.stringify(addRecipe));
+    });
 
-    // // ingredients
-    //
-    // function addIngredient(ingredient) {
-    //     const $newLi = document.createElement("li");
-    //     const $buttons = `<button type="button" class="edit-ingredients">
-    //                         <i class="far fa-edit"></i></i>
-    //                       </button>
-    //                       <button type="button" class="remove-ingredients">
-    //                         <i class="far fa-trash-alt"></i>
-    //                       </button>`;
-    //
-    //     $newLi.innerHTML = ingredient + $buttons;
-    //
-    //     $recipeIngredientsList.appendChild($newLi);
-    // }
-    //
-    // $recipeIngredientsButton.addEventListener("click", function (e) {
-    //     e.preventDefault();
-    //
-    //     newRecipe.ingredients.push($recipeIngredientsText.value);
-    //     addIngredient($recipeIngredientsText.value);
-    //
-    //     $recipeIngredientsText.value = "";
-    // });
-    //
-    // //add instructions
-    //
-    // function addInstruction(instruction) {
-    //     const $newLi = document.createElement("li");
-    //     const $buttons = `<button type="button" class="edit-instructions">
-    //                         <i class="far fa-edit"></i>
-    //                       </button>
-    //                       <button type="button" class="remove-instructions">
-    //                         <i class="far fa-trash-alt"></i>
-    //                       </button>`;
-    //
-    //     $newLi.innerHTML = `<div class="instructions-content"> {instruction + $buttons} </div>`;
-    //     $recipeInstructionsList.appendChild($newLi);
-    // }
-    //
-    // $recipeInstructionsButton.addEventListener("click", function (e) {
-    //     e.preventDefault();
-    //
-    //     newRecipe.instructions.push($recipeInstructionsText.value);
-    //     addInstruction($recipeInstructionsText.value);
-    //
-    //     $recipeInstructionsText.value = "";
-    // });
-    //
-    // // saving the recipes
-    //
-    // $savingButton.addEventListener("click", function (e) {
-    //     e.preventDefault();
-    //
-    //     newRecipe.title = $recipeName.value;
-    //     newRecipe.description = $recipeDescription.value;
-    //     saveRecipeToLocalStorage(newRecipe);
-    //
-    //     document.querySelector('.add-recipe-modal').style.display = 'none';
-    //     $mainPanel.style.display = 'flex';
-    //
-    // });
 
 // recipe list
 

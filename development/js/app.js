@@ -175,6 +175,11 @@ console.log(localStorage);
         return currentNameIndex;
     });
 
+    // show add-recipe-modal form recipes.js
+    if(JSON.parse(localStorage.getItem("addRecipe")) === true)
+    {
+        document.querySelector('.add-recipe-modal').style.display = 'flex';
+    }
 
     // add_recipe & add_plan widgets
 
@@ -196,6 +201,8 @@ console.log(localStorage);
 
     document.getElementById('exit-recipe-button').addEventListener('click', function () {
         document.querySelector('.add-recipe-modal').style.display = 'none'
+        let addRecipe = false;
+        localStorage.setItem("addRecipe", JSON.stringify(addRecipe));
     });
 
 
@@ -493,6 +500,8 @@ console.log(localStorage);
         if (users[currentNameIndex].recipes !== undefined) {
             newObject.id = users[currentNameIndex].recipes.length + 1;
             users[currentNameIndex].recipes.push(newObject);
+            console.log("is undefined");
+            console.log(users[currentNameIndex].recipes);
         }
         else
         {
