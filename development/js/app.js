@@ -5,21 +5,14 @@ document.addEventListener("DOMContentLoaded", function ()
 
 const $liList = document.querySelectorAll(".aside-menu li");
 
-for (let i = 0; i < $liList.length; i++) {
-
-    $liList[i].querySelector("a").addEventListener("mouseenter", function () {
-        for (let j = 0; j < $liList.length; j++) {
-            $liList[j].querySelector("i").classList.remove("fas");
-            $liList[j].querySelector("i").classList.remove("fa-chevron-right");
-            $liList[j].querySelector("a").classList.remove("border-left");
-        }
-
-        $liList[i].querySelector("i").classList.add("fas");
-        $liList[i].querySelector("i").classList.add("fa-chevron-right");
-        $liList[i].querySelector("a").classList.add("border-left");
-    });
-
-}
+    for (let i = 0; i < $liList.length; i++) {
+        $liList[i].querySelector("i").classList.remove("fas");
+        $liList[i].querySelector("i").classList.remove("fa-chevron-right");
+        $liList[i].querySelector("a").classList.remove("border-left");
+    }
+    $liList[0].querySelector("i").classList.add("fas");
+    $liList[0].querySelector("i").classList.add("fa-chevron-right");
+    $liList[0].querySelector("a").classList.add("border-left");
 
 // saving name
 
@@ -182,6 +175,11 @@ console.log(localStorage);
         return currentNameIndex;
     });
 
+    // show add-recipe-modal form recipes.js
+    if(JSON.parse(localStorage.getItem("addRecipe")) === true)
+    {
+        document.querySelector('.add-recipe-modal').style.display = 'flex';
+    }
 
     // add_recipe & add_plan widgets
 
@@ -203,6 +201,8 @@ console.log(localStorage);
 
     document.getElementById('exit-recipe-button').addEventListener('click', function () {
         document.querySelector('.add-recipe-modal').style.display = 'none'
+        let addRecipe = false;
+        localStorage.setItem("addRecipe", JSON.stringify(addRecipe));
     });
 
 
@@ -500,6 +500,8 @@ console.log(localStorage);
         if (users[currentNameIndex].recipes !== undefined) {
             newObject.id = users[currentNameIndex].recipes.length + 1;
             users[currentNameIndex].recipes.push(newObject);
+            console.log("is undefined");
+            console.log(users[currentNameIndex].recipes);
         }
         else
         {
